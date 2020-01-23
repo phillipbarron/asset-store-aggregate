@@ -1,0 +1,4 @@
+INFO  started: Metals version 0.8.0 in workspace '/Users/barrop02/workspace/asset-store-aggregare'
+INFO  time: initialize in 0.83s
+Jan 23, 2020 9:19:33 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1

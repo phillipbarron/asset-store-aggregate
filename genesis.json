@@ -1,0 +1,42 @@
+{
+  "cosmosConfig": [
+    {
+      "value": "test-cps-vivo-sumologic-logging",
+      "secure": false,
+      "key": "s3_bucket_name"
+    }
+  ],
+  "customRepos": {
+   "filebeat": {
+      "url": "https:\/\/packages.elastic.co\/beats\/yum\/el\/x86_64",
+      "type": "direct"
+    },
+    "cps-filebeat": {
+      "url": "https:\/\/repository.api.bbci.co.uk\/cps-filebeat-el7\/revisions\/head",
+      "type": "mirrorlist"
+    },
+    "cps-collectd": {
+      "url": "https:\/\/repository.api.bbci.co.uk\/cps-collectd-el7\/revisions\/head",
+      "type": "mirrorlist"
+    },
+    "collectd": {
+      "url": "https:\/\/pkg.ci.collectd.org\/rpm\/master\/epel-7-x86_64\/",
+      "type": "direct"
+    },
+    "centos7-cosmos": {
+      "url": "https:\/\/repository.api.bbci.co.uk\/cosmos-el7\/revisions\/head",
+      "gpg_key": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: GnuPG v2.0.14 (GNU\/Linux)\n\nmQINBFU+OJsBEADSNABRPjwP7Skphu6I3sSUbGKMxQi3B\/\/pIEuEjaDBljBm5U0Hpv3QGBeb9wj0\nMnPJfNHtxELzaEbDjLsD3ROc2kZQ+8FtblmoLZztN4aWd3fH4oaGGwKHkVQW4XNtyiNw4atdQ+\/s\nmqQFpS9cfKDEJCtr4fvU4tH6YtbyFhu2shK3AilEHNPcL3XZsKKhvrCEakaDPYv7yzHt1BBQ5oNL\ntuu\/d4THzkeoTQdn4DJjLWO68lfqV\/JpmcR1QlakXfuIF9XqrEwC1w1nJXUKNPyopwoimNTYMyYN\nIkhtPa4+OIX0Cxu+qjJn7XJUn1z90X8eoH+BPtxCUoBdB+NUG0CE0WbdniflAugmDe0efzh\/sQuX\nRYv\/q81MNOP5xt6SAjl3YQjt7jt1+MAZ2OoUEGcsaU1lha9WShhTe5HAIpGhhJk0smqiKdLHIuBY\nrAcOK9eGcknNyj4cJoVh0jlQO1tnMawnWavkEc0m4wVDdvlh\/ENS5HHaqFkk7IQNWffLqEg\/htKe\n\/ZlXMW9HF+ugNL\/fqTdin+riJaKhcPk3qx\/dHJDVpl5Kp\/O+odqBfQsY77+uBr9RCj4yr+H\/\/0fF\nwSjstlQ4Zp7edj9zjZ4zPjVmzCjAFTPYUeNKUnyeY9zkXwiQvoxzAYtdRfi6hMUWtS0RDnM+g8vo\niRYdGp+eUfF0kQARAQABtEtDbG91ZFRlYW0gSmVua2lucyAoY2kuY2xvdWR0ZWFtLnRvb2xzLmJi\nYy5jby51aykgPGZtb3RnY2xvdWR0ZWFtQGJiYy5jby51az6JAjgEEwECACIFAlU+OJsCGwMGCwkI\nBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEF0OaaiODRk7XAUP\/iISIkl5na38wUjnTPYReB9IXDkg\nmwyWDoi4acZ\/WcJkuIL0rkDxjUuwIi07VMMM9SA+MvHwTi2KItk5IsTwmVJNS\/+vDvWtV238lJAN\nDTd+AfXesJol9V6PVVWrlwXT2GMBT3+C5OVep0z\/\/vHFqfISdwPvXs\/Kvs6zWFUQJUvhMr3rrIs8\nIs6Z+oRWqhcvG3YugUzZDJWXbWTtTzZ7QKs5\/upDZffMtDf7NqtIlgXhkh90DhZ3KoAZjNo4CTwU\nfccucsqEfZcY5X6dFUq4vurrtxcqBPeLveNdQZYmcU1LRyZVYGJLQptShaxZUHWd4Hmi+qxnrSI6\nRph6Xh7yXOW9SUu57EpxhizJRzHwhOT2IuGOiig77r8OTDMYxPkENxCH1kZJXksTli60qF03f\/x5\nq5YFMKCyVrjl4V0dLPGr9SxWyE3hRjJnEOR4sI5Jo\/eeR4bgUSTsMRh0WVROJLav1isEkzrd8afc\ntS4LLqq3B8nD9QGxNU2dPF+IjdViXBbFOv6fY+hNr9tmA37SmXR8zhIJYw386ceYA8DIlRn83igZ\n8eUwUWuRcnNA8HvehqQlQ4o\/0khaS2QzVH\/gpBstxUGUHT145k3m+HSFb6xVNMQboLbvLgdCtWx7\nAjYfyWI5rUF\/RqDVFV1cjIJssI4H6gAiSWLD2ODR1NMlQaQJ\n=iBwI\n-----END PGP PUBLIC KEY BLOCK-----",
+      "type": "mirrorlist"
+    },
+    "centos7-cloud-httpd-conf": {
+      "url": "https:\/\/repository.api.bbci.co.uk\/cloud-httpd-conf-el7\/revisions\/stable",
+      "gpg_key": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: GnuPG v2.0.14 (GNU\/Linux)\n\nmQINBFU+OJsBEADSNABRPjwP7Skphu6I3sSUbGKMxQi3B\/\/pIEuEjaDBljBm5U0Hpv3QGBeb9wj0\nMnPJfNHtxELzaEbDjLsD3ROc2kZQ+8FtblmoLZztN4aWd3fH4oaGGwKHkVQW4XNtyiNw4atdQ+\/s\nmqQFpS9cfKDEJCtr4fvU4tH6YtbyFhu2shK3AilEHNPcL3XZsKKhvrCEakaDPYv7yzHt1BBQ5oNL\ntuu\/d4THzkeoTQdn4DJjLWO68lfqV\/JpmcR1QlakXfuIF9XqrEwC1w1nJXUKNPyopwoimNTYMyYN\nIkhtPa4+OIX0Cxu+qjJn7XJUn1z90X8eoH+BPtxCUoBdB+NUG0CE0WbdniflAugmDe0efzh\/sQuX\nRYv\/q81MNOP5xt6SAjl3YQjt7jt1+MAZ2OoUEGcsaU1lha9WShhTe5HAIpGhhJk0smqiKdLHIuBY\nrAcOK9eGcknNyj4cJoVh0jlQO1tnMawnWavkEc0m4wVDdvlh\/ENS5HHaqFkk7IQNWffLqEg\/htKe\n\/ZlXMW9HF+ugNL\/fqTdin+riJaKhcPk3qx\/dHJDVpl5Kp\/O+odqBfQsY77+uBr9RCj4yr+H\/\/0fF\nwSjstlQ4Zp7edj9zjZ4zPjVmzCjAFTPYUeNKUnyeY9zkXwiQvoxzAYtdRfi6hMUWtS0RDnM+g8vo\niRYdGp+eUfF0kQARAQABtEtDbG91ZFRlYW0gSmVua2lucyAoY2kuY2xvdWR0ZWFtLnRvb2xzLmJi\nYy5jby51aykgPGZtb3RnY2xvdWR0ZWFtQGJiYy5jby51az6JAjgEEwECACIFAlU+OJsCGwMGCwkI\nBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEF0OaaiODRk7XAUP\/iISIkl5na38wUjnTPYReB9IXDkg\nmwyWDoi4acZ\/WcJkuIL0rkDxjUuwIi07VMMM9SA+MvHwTi2KItk5IsTwmVJNS\/+vDvWtV238lJAN\nDTd+AfXesJol9V6PVVWrlwXT2GMBT3+C5OVep0z\/\/vHFqfISdwPvXs\/Kvs6zWFUQJUvhMr3rrIs8\nIs6Z+oRWqhcvG3YugUzZDJWXbWTtTzZ7QKs5\/upDZffMtDf7NqtIlgXhkh90DhZ3KoAZjNo4CTwU\nfccucsqEfZcY5X6dFUq4vurrtxcqBPeLveNdQZYmcU1LRyZVYGJLQptShaxZUHWd4Hmi+qxnrSI6\nRph6Xh7yXOW9SUu57EpxhizJRzHwhOT2IuGOiig77r8OTDMYxPkENxCH1kZJXksTli60qF03f\/x5\nq5YFMKCyVrjl4V0dLPGr9SxWyE3hRjJnEOR4sI5Jo\/eeR4bgUSTsMRh0WVROJLav1isEkzrd8afc\ntS4LLqq3B8nD9QGxNU2dPF+IjdViXBbFOv6fY+hNr9tmA37SmXR8zhIJYw386ceYA8DIlRn83igZ\n8eUwUWuRcnNA8HvehqQlQ4o\/0khaS2QzVH\/gpBstxUGUHT145k3m+HSFb6xVNMQboLbvLgdCtWx7\nAjYfyWI5rUF\/RqDVFV1cjIJssI4H6gAiSWLD2ODR1NMlQaQJ\n=iBwI\n-----END PGP PUBLIC KEY BLOCK-----",
+      "type": "mirrorlist"
+    },
+    "centos7-epel": {
+      "url": "https:\/\/mirrors.fedoraproject.org\/metalink?repo=epel-7&arch=x86_64",
+      "gpg_key": "-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: GnuPG v1.4.11 (GNU\/Linux)\n\nmQINBFKuaIQBEAC1UphXwMqCAarPUH\/ZsOFslabeTVO2pDk5YnO96f+rgZB7xArBOSeQk7B90iqS\nJ85\/c72OAn4OXYvT63gfCeXpJs5M7emXkPsNQWWSju99lW+AqSNmjYWhmRlLRGl0OO7gIwj776dI\nXvcMNFlzSPj00N2xAqjMbjlnV2n2abAE5gq6VpqPvFXVyfrVa\/ualogDVmf6h2t4Rdpifq8qTHsH\nFU3xpCz+T6\/dGWKGQ42ZQfTaLnDMjToAsmY0AyevkIbX6iZVtzGvanYpPcWW4X0RDPcpqfFNZk64\n3xI4lsZ+Y2Er9Yu5S\/8x0ly+tmmIokaE0wwbdUu740YTZjCesroYWiRg5zuQ2xfKxJoV5E+Eh+tY\nwGDJn6HfWhRgnudRRwvuJ45ztYVtKulKw8QQpd2STWrcQQDJaRWmnMooX\/PATTjCBExB9dkz38Dr\nuvk7IkHMtsIqlkAOQMdsX1d3Tov6BE2XDjIG0zFxLduJGbVwc\/6rIc95T055j36Ez0HrjxdpTGOO\nHxRqMK5m9flFbaxxtDnS7w77WqzW7HjFrD0VeTx2vnjjGqchHEQpfDpFOzb8LTFhgYidyRNUflQY\n35WLOzLNV+pV3eQ3Jg11UFwelSNLqfQfuFRGc+zcwkNjHh5yPvm9odR1BIfqJ6sKGPGbtPNXo7ER\nMRypWyRz0zi0twARAQABtChGZWRvcmEgRVBFTCAoNykgPGVwZWxAZmVkb3JhcHJvamVjdC5vcmc+\niQI4BBMBAgAiBQJSrmiEAhsPBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRBqL66iNSxk5cfG\nD\/4spqpsTjtDM7qpytKLHKruZtvuWiqt5RfvT9ww9GUUFMZ4ZZGX4nUXg49qixDLayWR8ddG\/s5k\nyOi3C0uX\/6inzaYyRg+Bh70brqKUK14F1BrrPi29eaKfG+GuMFtXdBG2a7OtPmw3yuKmq9Epv6B0\nmP6E5KSdvSRSqJWtGcA6wRS\/wDzXJENHp5re9Ism3CYydpy0GLRA5wo4fPB5uLdUhLEUDvh2KK\/\/\nfMjja3o0L+SNz8N0aDZyn5AxCU9RB3EHcTecFgoy5umRj99BZrebR1NO+4gBrivIfdvD4fJNfNBH\nXwhSH9ACGCNvHnXVjHQF9iHWApKkRIeh8Fr2n5dtfJEF7SEX8GbX7FbsWo29kXMrVgNqHNyDnfAB\nVoPubgQdtJZJkVZAkaHrMu8AytwT62Q4eNqmJI1aWbZQNI5jWYqc6RKuCK6\/F99qthFT9gJO17+y\nRuL6Uv2\/vgzVR1RGdwVLKwlUjGPAjYflpCQwWMAASxiv9uPyYPHcErSrbRG0wjIfAR3vus1OSOx3\nxZHZpXFfmQTsDP7zVROLzV98R3JwFAxJ4\/xqeON4vCPFU6OsT3lWQ8w7il5ohY95wmujfr6lk89k\nEzJdOTzcn7DBbUru33CQMGKZ3EvtRjsC7FDbL017qxS+ZVA\/HGkyfiu4cpgV8VUnbql5eAZ+1Ll6\nDw==\n=hdPa\n-----END PGP PUBLIC KEY BLOCK-----",
+      "type": "mirrorlist"
+    }
+  }
+}

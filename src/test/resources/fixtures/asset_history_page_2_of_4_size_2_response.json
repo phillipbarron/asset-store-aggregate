@@ -1,0 +1,32 @@
+{
+  "assetId": "cq915kk4wy5o",
+  "versions": [
+    {
+      "majorVersion": 2,
+      "events": [
+        {
+          "eventId": "2b1a95cb-e834-4e0a-b5ab-6a58dffa850d",
+          "type": "PUBLISHED",
+          "timestamp": "2019-06-24T06:09:00.982Z",
+          "userId": "some.one@bbc.co.uk",
+          "minorVersion": 0
+        }
+      ]
+    },
+    {
+      "majorVersion" :1,
+      "events": [
+        {
+          "eventId": "dae6dab7-86da-4105-8825-afd3c2fe37a0",
+          "type": "PUBLISHED_MINOR_CHANGE",
+          "timestamp": "2019-06-24T05:09:00.982Z",
+          "userId": "some.one@bbc.co.uk",
+          "minorVersion": 1
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "nextPage": 3
+  }
+}

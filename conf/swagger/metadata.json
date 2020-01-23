@@ -1,0 +1,10 @@
+{
+  "info": {
+    "title": "Optimo History Api",
+    "description": "Basic scalatra-application with /status endpoint.",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "definitions": {},
+  "swagger": "2.0"
+}

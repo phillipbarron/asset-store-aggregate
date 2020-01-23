@@ -1,0 +1,23 @@
+{
+  "/status": {
+    "get": {
+      "summary": "Status",
+      "description": "Indicates whether the application is healthy",
+      "tags": [
+        "1. Status"
+      ],
+      "parameters": [],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "404": {
+          "description": "Not found"
+        },
+        "500": {
+          "description": "Internal Server Error"
+        }
+      }
+    }
+  }
+}

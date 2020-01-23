@@ -1,0 +1,27 @@
+{
+  "assetId": "cq915kk4wy5o",
+  "versions": [
+    {
+      "majorVersion": 3,
+      "events": [
+        {
+          "eventId": "ca01bd9c-5543-4563-a177-46b21f86fae4",
+          "type": "WITHDRAWN",
+          "timestamp": "2019-06-25T07:09:00.982Z",
+          "userId": "some.one@bbc.co.uk",
+          "minorVersion": 1
+        },
+        {
+          "eventId": "ca01bd9c-5543-4563-a177-46b21f86fae3",
+          "type": "PUBLISHED",
+          "timestamp": "2019-06-24T07:09:00.982Z",
+          "userId": "some.one@bbc.co.uk",
+          "minorVersion": 0
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "nextPage": 2
+  }
+}

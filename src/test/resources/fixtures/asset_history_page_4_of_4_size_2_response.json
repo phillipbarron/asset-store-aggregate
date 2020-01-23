@@ -1,0 +1,18 @@
+{
+  "assetId": "cq915kk4wy5o",
+  "versions": [
+    {
+      "majorVersion": 0,
+      "events": [
+        {
+          "eventId": "1519bbd3-256f-42af-8ac7-8d4b677b7789",
+          "type": "SAVED",
+          "timestamp": "2019-06-24T00:09:00.985Z",
+          "userId": "some.one@bbc.co.uk",
+          "minorVersion": 0
+        }
+      ]
+    }
+  ],
+  "pagination": {}
+}

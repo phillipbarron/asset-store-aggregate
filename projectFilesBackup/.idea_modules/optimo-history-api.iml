@@ -1,0 +1,151 @@
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="scala" name="Scala">
+      <configuration>
+        <option name="compilerLibraryLevel" value="Project"/>
+        <option name="compilerLibraryName" value="SBT: scala:2.11.12"/>
+        <option name="languageLevel" value="Scala 2.11"/>
+        <option name="fsc" value="true"/>
+        <option name="deprecationWarnings" value="true"/>
+        <option name="compilerOptions" value="-deprecation"/>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../target/scala-2.11/classes"/>
+    <output-test url="file://$MODULE_DIR$/../target/scala-2.11/test-classes"/>
+    <exclude-output/>
+    <content url="file://$MODULE_DIR$/../">
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/scala" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/java" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/resources" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/../src/main/webapp" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/../src/test/scala" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/../src/test/java" isTestSource="true"/>
+      <sourceFolder url="file://$MODULE_DIR$/../src/test/resources" isTestSource="true"/>
+      <excludeFolder url="file://$MODULE_DIR$/../target"/>
+    </content>
+    <orderEntry type="inheritedJdk"/>
+    <orderEntry type="sourceFolder" forTests="false"/>
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.11.12" level="project"/>
+    <orderEntry type="library" name="SBT: org.scalatra:scalatra_2.11:2.6.4" level="project"/>
+    <orderEntry type="library" name="SBT: org.scalatra:scalatra-common_2.11:2.6.4" level="project"/>
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.25" level="project"/>
+    <orderEntry type="library" name="SBT: com.googlecode.juniversalchardet:juniversalchardet:1.0.3" level="project"/>
+    <orderEntry type="library" name="SBT: eu.medsea.mimeutil:mime-util:2.1.3" level="project"/>
+    <orderEntry type="library" name="SBT: org.apache.commons:commons-lang3:3.6" level="project"/>
+    <orderEntry type="library" name="SBT: org.scala-lang.modules:scala-parser-combinators_2.11:1.0.6" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.scala-lang.modules:scala-xml_2.11:1.1.0:test" level="project"/>
+    <orderEntry type="library" name="SBT: org.scala-lang.modules:scala-xml_2.11:1.0.6" level="project"/>
+    <orderEntry type="library" name="SBT: org.scalatra:scalatra-json_2.11:2.6.4" level="project"/>
+    <orderEntry type="library" name="SBT: com.thoughtworks.paranamer:paranamer:2.8" level="project"/>
+    <orderEntry type="library" name="SBT: org.json4s:json4s-jackson_2.11:3.6.3" level="project"/>
+    <orderEntry type="library" name="SBT: org.json4s:json4s-core_2.11:3.6.3" level="project"/>
+    <orderEntry type="library" name="SBT: org.json4s:json4s-ast_2.11:3.6.3" level="project"/>
+    <orderEntry type="library" name="SBT: org.json4s:json4s-scalap_2.11:3.6.3" level="project"/>
+    <orderEntry type="library" name="SBT: com.fasterxml.jackson.core:jackson-databind:2.9.6" level="project"/>
+    <orderEntry type="library" name="SBT: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project"/>
+    <orderEntry type="library" name="SBT: com.fasterxml.jackson.core:jackson-core:2.9.6" level="project"/>
+    <orderEntry type="library" name="SBT: org.json4s:json4s-native_2.11:3.6.3" level="project"/>
+    <orderEntry type="library" name="SBT: org.json4s:json4s-ext_2.11:3.6.3" level="project"/>
+    <orderEntry type="library" name="SBT: joda-time:joda-time:2.10" level="project"/>
+    <orderEntry type="library" name="SBT: org.joda:joda-convert:2.1.1" level="project"/>
+    <orderEntry type="library" name="SBT: bbc.shared:cloudwatch-metrics_2.11:2.1.0" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:aws-java-sdk-cloudwatch:1.11.475" level="project"/>
+    <orderEntry type="library" name="SBT: org.apache.httpcomponents:httpclient:4.5.5" level="project"/>
+    <orderEntry type="library" name="SBT: org.apache.httpcomponents:httpcore:4.4.9" level="project"/>
+    <orderEntry type="library" name="SBT: commons-logging:commons-logging:1.2" level="project"/>
+    <orderEntry type="library" name="SBT: commons-codec:commons-codec:1.10" level="project"/>
+    <orderEntry type="library" name="SBT: software.amazon.ion:ion-java:1.0.2" level="project"/>
+    <orderEntry type="library" name="SBT: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.7" level="project"/>
+    <orderEntry type="library" name="SBT: com.codahale.metrics:metrics-core:3.0.2" level="project"/>
+    <orderEntry type="library" name="SBT: bbc.shared:cps-scala-whitelist_2.11:2.1.0" level="project"/>
+    <orderEntry type="library" name="SBT: ch.qos.logback:logback-classic:1.2.3" level="project"/>
+    <orderEntry type="library" name="SBT: ch.qos.logback:logback-core:1.2.3" level="project"/>
+    <orderEntry type="library" name="SBT: bbc.shared:cps-monitoring_2.11:1.0.4" level="project"/>
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-compiler:2.11.8" level="project"/>
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.11.8" level="project"/>
+    <orderEntry type="library" name="SBT: com.typesafe.akka:akka-actor_2.11:2.3.11" level="project"/>
+    <orderEntry type="library" name="SBT: com.typesafe:config:1.2.1" level="project"/>
+    <orderEntry type="library" name="SBT: commons-io:commons-io:2.6" level="project"/>
+    <orderEntry type="library" name="SBT: com.google.guava:guava:23.0" level="project"/>
+    <orderEntry type="library" name="SBT: com.google.code.findbugs:jsr305:1.3.9" level="project"/>
+    <orderEntry type="library" name="SBT: com.google.errorprone:error_prone_annotations:2.0.18" level="project"/>
+    <orderEntry type="library" name="SBT: com.google.j2objc:j2objc-annotations:1.1" level="project"/>
+    <orderEntry type="library" name="SBT: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project"/>
+    <orderEntry type="library" name="SBT: bbc.shared:alertingappender_2.11:1.0.2" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:aws-java-sdk-sns:1.11.190" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:aws-java-sdk-sqs:1.11.190" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:aws-java-sdk-s3:1.11.580" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:aws-java-sdk-kms:1.11.580" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:aws-java-sdk-core:1.11.580" level="project"/>
+    <orderEntry type="library" name="SBT: com.amazonaws:jmespath-java:1.11.580" level="project"/>
+    <orderEntry type="library" name="SBT: org.apache.kafka:kafka-clients:2.2.1" level="project"/>
+    <orderEntry type="library" name="SBT: com.github.luben:zstd-jni:1.3.8-1" level="project"/>
+    <orderEntry type="library" name="SBT: org.lz4:lz4-java:1.5.0" level="project"/>
+    <orderEntry type="library" name="SBT: org.xerial.snappy:snappy-java:1.1.7.2" level="project"/>
+    <orderEntry type="library" name="SBT: info.cukes:cucumber-scala_2.11:1.2.5" level="project"/>
+    <orderEntry type="library" name="SBT: info.cukes:cucumber-core:1.2.5" level="project"/>
+    <orderEntry type="library" name="SBT: info.cukes:cucumber-html:0.2.3" level="project"/>
+    <orderEntry type="library" name="SBT: info.cukes:cucumber-jvm-deps:1.0.5" level="project"/>
+    <orderEntry type="library" name="SBT: info.cukes:gherkin:2.12.2" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-webapp:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-xml:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-util:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-servlet:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-security:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-server:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: javax.servlet:javax.servlet-api:3.1.0" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-http:9.4.14.v20181114" level="project"/>
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-io:9.4.14.v20181114" level="project"/>
+    <orderEntry scope="PROVIDED" type="library" name="SBT: org.scoverage:scalac-scoverage-runtime_2.11:1.0.4:provided" level="project"/>
+    <orderEntry scope="PROVIDED" type="library" name="SBT: org.scala-lang:scala-library:2.11.4:provided" level="project"/>
+    <orderEntry scope="PROVIDED" type="library" name="SBT: org.scoverage:scalac-scoverage-plugin_2.11:1.0.4:provided" level="project"/>
+    <orderEntry scope="PROVIDED" type="library" name="SBT: org.scala-lang.modules:scala-xml_2.11:1.0.1:provided" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: bbc.shared:sbt-cucumber-integration_2.11:1.0.0:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.scala-tools.testing:test-interface:0.5:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.scalatra:scalatra-scalatest_2.11:2.6.4:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.scalatra:scalatra-test_2.11:2.6.4:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.mockito:mockito-core:2.7.22:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.apache.httpcomponents:httpmime:4.5.3:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: net.bytebuddy:byte-buddy:1.6.11:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: net.bytebuddy:byte-buddy-agent:1.6.11:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.objenesis:objenesis:2.5:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.scalatest:scalatest_2.11:3.0.3:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.scalactic:scalactic_2.11:3.0.3:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: junit:junit:4.12:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.hamcrest:hamcrest-core:1.3:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.dispatchhttp:dispatch-core_2.11:1.0.1:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.asynchttpclient:async-http-client:2.5.4:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.asynchttpclient:async-http-client-netty-utils:2.5.4:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-buffer:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-common:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: com.sun.activation:javax.activation:1.2.0:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-codec-http:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-codec:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-transport:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-resolver:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-handler:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-codec-socks:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-handler-proxy:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-transport-native-epoll:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-transport-native-unix-common:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-resolver-dns:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: io.netty:netty-codec-dns:4.1.30.Final:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.reactivestreams:reactive-streams:1.0.2:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: com.typesafe.netty:netty-reactive-streams:2.0.0:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: bbc.shared:cps-wiremock_2.11:2.0.0:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: com.github.tomakehurst:wiremock:1.43:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: net.sf.jopt-simple:jopt-simple:4.3:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.mortbay.jetty:jetty:6.1.26:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.mortbay.jetty:jetty-util:6.1.26:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.mortbay.jetty:servlet-api:2.5-20081211:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.skyscreamer:jsonassert:1.2.1:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: org.json:json:20090211:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: log4j:log4j:1.2.16:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: com.jayway.jsonpath:json-path:0.8.1:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: net.minidev:json-smart:1.1.1:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: commons-lang:commons-lang:2.6:test" level="project"/>
+    <orderEntry scope="TEST" type="library" name="SBT: junit:junit-dep:4.10:test" level="project"/>
+  </component>
+</module>

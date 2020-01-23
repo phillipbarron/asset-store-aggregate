@@ -1,0 +1,3 @@
+import bbc.camscalatrachassis.lifecycle.LauncherChassis
+
+object Launcher extends LauncherChassis

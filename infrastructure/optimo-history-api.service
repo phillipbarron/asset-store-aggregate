@@ -1,0 +1,18 @@
+[Unit]
+Description=optimo-history-api
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+WorkingDirectory=/usr/lib/optimo-history-api
+ExecStart=/bin/bash -c "java -jar /usr/lib/optimo-history-api/target/scala-2.11/optimo-history-api.jar"
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=optimo-history-api
+User=optimo-history-api
+Group=optimo-history-api
+
+[Install]
+WantedBy=multi-user.target

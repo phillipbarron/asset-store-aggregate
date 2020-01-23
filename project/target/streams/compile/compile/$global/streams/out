@@ -1,0 +1,29 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:2:8: object Build is not a member of package sbt[0m
+[0m[[0m[31merror[0m] [0m[0mimport sbt.{Build => SbtBuild}[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:5:24: object xsbtwebplugin is not a member of package com.earldouglas[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.earldouglas.xsbtwebplugin.PluginKeys._[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:6:24: object xsbtwebplugin is not a member of package com.earldouglas[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.earldouglas.xsbtwebplugin.WebPlugin._[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:7:8: not found: object templemore[0m
+[0m[[0m[31merror[0m] [0m[0mimport templemore.sbt.cucumber.CucumberPlugin[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:8:20: object Plugin is not a member of package sbtassembly[0m
+[0m[[0m[31merror[0m] [0m[0mimport sbtassembly.Plugin._[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:9:8: not found: object AssemblyKeys[0m
+[0m[[0m[31merror[0m] [0m[0mimport AssemblyKeys._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:11:22: not found: type SbtBuild[0m
+[0m[[0m[31merror[0m] [0m[0mobject Build extends SbtBuild {[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:63:72: value map is not a member of (sbt.SettingKey[java.io.File], sbt.SettingKey[java.io.File])[0m
+[0m[[0m[31merror[0m] [0m[0m    resourceGenerators in Compile <+= (resourceManaged, baseDirectory) map {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/barrop02/workspace/optimo-history-api/project/Build.scala:78:14: too many arguments (3) for method apply: (id: String, base: java.io.File)sbt.Project in object Project[0m
+[0m[[0m[31merror[0m] [0m[0mNote that 'settings' is not a parameter name of the invoked method.[0m
+[0m[[0m[31merror[0m] [0m[0m    settings =[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m9 errors found[0m

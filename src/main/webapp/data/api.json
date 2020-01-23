@@ -1,0 +1,117 @@
+{
+  "info": {
+    "title": "Optimo History Api",
+    "description": "Optimo History Api swagger documentation",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "summary": "Status",
+        "description": "Indicates whether the application is healthy",
+        "tags": [
+          "1. Status"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/state/{assetId}/{eventId}": {
+      "get": {
+        "summary": "State",
+        "description": "Provide the asset id and event id to retrieve the snapshot",
+        "tags": [
+          "2. State"
+        ],
+        "parameters": [
+          {
+            "name": "assetId",
+            "description": "The asset id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "eventId",
+            "description": "The event id associated with the asset",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/history/{assetId}": {
+      "get": {
+        "summary": "History of events grouped by version",
+        "description": "Provide the asset id to retrieve the list of events for that asset",
+        "tags": [
+          "3. History"
+        ],
+        "parameters": [
+          {
+            "name": "assetId",
+            "description": "The asset id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "description": "The page of results to retrieve",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "size",
+            "description": "The size of the page of results to retrieve",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "swagger": "2.0"
+}

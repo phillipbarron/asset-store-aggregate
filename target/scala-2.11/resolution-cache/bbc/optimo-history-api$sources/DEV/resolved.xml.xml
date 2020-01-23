@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="bbc"
+		module="optimo-history-api$sources"
+		revision="DEV"
+		status="integration"
+		publication="20200123085920"
+	/>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="container" visibility="private" description=""/>
+		<conf name="jetty" visibility="private" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="info.cukes" name="cucumber-core" rev="1.2.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="cucumber-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-xml" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-xml" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-runner" rev="9.4.8.v20171121" transitive="false" conf="jetty->default,compile,runtime,default(compile),master">
+			<artifact name="jetty-runner" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.xmlunit" name="xmlunit-legacy" rev="2.6.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="xmlunit-legacy" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.8" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="paranamer" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatra" name="scalatra-common_2.11" rev="2.6.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalatra-common_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe" name="ssl-config-core_2.11" rev="0.3.7" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="ssl-config-core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="commons-logging" name="commons-logging" rev="1.1.3" transitive="false" conf="compile->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-logging" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.tminglei" name="slick-pg_json4s_2.11" rev="0.15.7" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="slick-pg_json4s_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-native_2.11" rev="3.6.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="json4s-native_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-security" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-security" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.google.guava" name="guava" rev="20.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="guava" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="jmespath-java" rev="1.11.694" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="jmespath-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.antlr" name="antlr4-runtime" rev="4.7.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="antlr4-runtime" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.slick" name="slick-hikaricp_2.11" rev="3.3.2" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="slick-hikaricp_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-transport-native-unix-common" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-transport-native-unix-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.xerial.snappy" name="snappy-java" rev="1.1.7.2" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="snappy-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-scalap_2.11" rev="3.6.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-scalap_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-continuation" rev="9.2.28.v20190418" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-continuation" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-java8-compat_2.11" rev="0.7.0" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="scala-java8-compat_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.tminglei" name="slick-pg_2.11" rev="0.15.7" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="slick-pg_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.postgresql" name="postgresql" rev="42.2.6" transitive="false" conf="compile->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);runtime->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);test->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);compile-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);runtime-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);test-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*)">
+			<artifact name="postgresql" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatra" name="scalatra-test_2.11" rev="2.6.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalatra-test_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.jknack" name="handlebars" rev="4.0.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="handlebars" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.joda" name="joda-convert" rev="2.2.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="joda-convert" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.6" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-lang3" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-servlet" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-servlet" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.xmlunit" name="xmlunit-core" rev="2.6.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="xmlunit-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.11" rev="1.0.4" transitive="false" conf="scala-tool->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.9.9" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="jackson-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.reactivestreams" name="reactive-streams" rev="1.0.2" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="reactive-streams" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.11" rev="1.1.1" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master,master(compile);runtime->master(*),compile,runtime(*),runtime,compile(*),master,master(compile);test->master(*),compile,runtime(*),runtime,compile(*),master,master(compile);compile-internal->master(*),compile,runtime(*),runtime,compile(*),master,master(compile);runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master,master(compile);test-internal->master(*),compile,runtime(*),runtime,compile(*),master,master(compile)">
+			<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="aws-java-sdk-cloudwatch" rev="1.11.475" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="aws-java-sdk-cloudwatch" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.11.12" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->master(*),compile,runtime(*),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.12/">
+			<artifact name="scala-reflect" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="aws-java-sdk-sns" rev="1.11.190" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="aws-java-sdk-sns" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatra" name="scalatra_2.11" rev="2.6.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalatra_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.luben" name="zstd-jni" rev="1.3.8-1" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="zstd-jni" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="aws-java-sdk-core" rev="1.11.694" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="aws-java-sdk-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="aws-java-sdk-kms" rev="1.11.694" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="aws-java-sdk-kms" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.ow2.asm" name="asm" rev="7.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="asm" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.bytebuddy" name="byte-buddy-agent" rev="1.9.10" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="byte-buddy-agent" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-buffer" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-buffer" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="info.cukes" name="cucumber-scala_2.11" rev="1.2.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="cucumber-scala_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="bbc.shared" name="alertingappender_2.11" rev="1.0.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="alertingappender_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.asynchttpclient" name="async-http-client-netty-utils" rev="2.5.4" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="async-http-client-netty-utils" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.2.3" transitive="false" conf="compile->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="logback-classic" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-resolver" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-resolver" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.minidev" name="json-smart" rev="2.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json-smart" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.25" transitive="false" conf="compile->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="slf4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.9.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-collection-compat_2.11" rev="2.0.0" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="scala-collection-compat_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-http" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-http" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="commons-codec" name="commons-codec" rev="1.11" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="commons-codec" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-servlets" rev="9.2.28.v20190418" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-servlets" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.dataformat" name="jackson-dataformat-cbor" rev="2.6.7" transitive="false" conf="compile->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-dataformat-cbor" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.netty" name="netty-reactive-streams" rev="2.0.0" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-reactive-streams" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-stream-kafka_2.11" rev="1.0.4" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="akka-stream-kafka_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-codec" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-handler" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-handler" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.8" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalatest_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-transport-native-epoll" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-transport-native-epoll" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.mockito" name="mockito-core" rev="3.0.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="mockito-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-socks" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-codec-socks" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.5.9" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="httpclient" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-resolver-dns" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-resolver-dns" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.1.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.jayway.jsonpath" name="json-path" rev="2.4.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json-path" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.5" transitive="false" conf="scala-tool->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatra" name="scalatra-scalatest_2.11" rev="2.6.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalatra-scalatest_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-protobuf_2.11" rev="2.5.23" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master" info.apiURL="https://doc.akka.io/api/akka/2.5.23">
+			<artifact name="akka-protobuf_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.codahale.metrics" name="metrics-core" rev="3.0.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="metrics-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ast_2.11" rev="3.6.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="json4s-ast_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="aws-java-sdk-sqs" rev="1.11.190" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="aws-java-sdk-sqs" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.httpcomponents" name="httpcore" rev="4.4.11" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="httpcore" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalactic" name="scalactic_2.11" rev="3.0.8" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalactic_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.amazonaws" name="aws-java-sdk-s3" rev="1.11.694" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile)">
+			<artifact name="aws-java-sdk-s3" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-handler-proxy" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-handler-proxy" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.bytebuddy" name="byte-buddy" rev="1.9.10" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="byte-buddy" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.dispatchhttp" name="dispatch-core_2.11" rev="1.0.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="dispatch-core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-dns" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-codec-dns" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.sf.jopt-simple" name="jopt-simple" rev="5.0.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jopt-simple" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.11.12" transitive="false" conf="compile->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,master(*),compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;scala-tool->default,master(*),compile,runtime(*),runtime,optional,optional(default),compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.12/">
+			<artifact name="scala-library" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatra" name="scalatra-json_2.11" rev="2.6.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalatra-json_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.jknack" name="handlebars-helpers" rev="4.0.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="handlebars-helpers" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.flipkart.zjsonpatch" name="zjsonpatch" rev="0.4.4" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="zjsonpatch" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-core_2.11" rev="3.6.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="json4s-core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.googlecode.juniversalchardet" name="juniversalchardet" rev="1.0.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="juniversalchardet" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="info.cukes" name="cucumber-html" rev="0.2.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="cucumber-html" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.12" transitive="false" conf="scala-tool->default,compile,runtime,optional,optional(default),master">
+			<artifact name="scala-compiler" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-io" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-io" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.lz4" name="lz4-java" rev="1.5.0" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="lz4-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.minidev" name="accessors-smart" rev="1.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="accessors-smart" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ext_2.11" rev="3.6.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="json4s-ext_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-jackson_2.11" rev="3.6.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="json4s-jackson_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.slick" name="slick_2.11" rev="3.3.2" transitive="false" conf="compile->default,master(*),compile,runtime(*),runtime,default(compile),compile(*),master;runtime->default,master(*),compile,runtime(*),runtime,default(compile),compile(*),master;test->default,master(*),compile,runtime(*),runtime,default(compile),compile(*),master;compile-internal->default,master(*),compile,runtime(*),runtime,default(compile),compile(*),master;runtime-internal->default,master(*),compile,runtime(*),runtime,default(compile),compile(*),master;test-internal->default,master(*),compile,runtime(*),runtime,default(compile),compile(*),master">
+			<artifact name="slick_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-actor_2.11" rev="2.5.23" transitive="false" conf="compile->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="https://doc.akka.io/api/akka/2.5.23">
+			<artifact name="akka-actor_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.sun.activation" name="javax.activation" rev="1.2.0" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="javax.activation" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="joda-time" name="joda-time" rev="2.10.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="joda-time" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="javax.servlet" name="javax.servlet-api" rev="3.1.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="javax.servlet-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe" name="config" rev="1.3.3" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="config" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.9.9.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="jackson-databind" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.7" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-lang3" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="junit" name="junit" rev="4.12" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="junit" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-transport" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-transport" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.11" rev="2.5.23" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master" info.apiURL="https://doc.akka.io/api/akka/2.5.23">
+			<artifact name="akka-stream_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.objenesis" name="objenesis" rev="2.6" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="objenesis" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.hamcrest" name="hamcrest-core" rev="1.3" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="hamcrest-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="info.cukes" name="cucumber-jvm-deps" rev="1.0.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="cucumber-jvm-deps" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-server" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-server" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-common" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-webapp" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-webapp" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.tminglei" name="slick-pg_core_2.11" rev="0.15.7" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="slick-pg_core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.jetty" name="jetty-util" rev="9.4.20.v20190813" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jetty-util" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.zaxxer" name="HikariCP" rev="3.3.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);runtime->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);test->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);compile-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);runtime-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);test-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*)">
+			<artifact name="HikariCP" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.2.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="info.cukes" name="gherkin" rev="2.12.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gherkin" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.kafka" name="kafka-clients" rev="2.2.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);runtime->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);test->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);compile-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);runtime-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*);test-internal->default,compile,runtime,default(compile),master,master(*),runtime(*),compile(*)">
+			<artifact name="kafka-clients" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.tomakehurst" name="wiremock" rev="2.24.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="wiremock" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.asynchttpclient" name="async-http-client" rev="2.5.4" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="async-http-client" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.9.8" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="jackson-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty-codec-http" rev="4.1.30.Final" transitive="false" conf="test->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="netty-codec-http" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.9.8" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,master(*)">
+			<artifact name="jackson-databind" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="jline" name="jline" rev="2.14.3" transitive="false" conf="scala-tool->master(*),compile,compile(*),master">
+			<artifact name="jline" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="ch.qos.logback" name="logback-core" rev="1.2.3" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),runtime,compile(*),master">
+			<artifact name="logback-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="software.amazon.ion" name="ion-java" rev="1.0.2" transitive="false" conf="compile->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->master(*),compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="ion-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-xml_2.11" rev="3.6.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.9.9" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.xmlunit" name="xmlunit-placeholders" rev="2.6.2" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="xmlunit-placeholders" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.httpcomponents" name="httpmime" rev="4.5.3" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="httpmime" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+	</dependencies>
+</ivy-module>

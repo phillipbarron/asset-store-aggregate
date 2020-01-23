@@ -1,0 +1,32 @@
+{
+  "info": {
+    "title": "Optimo History Api",
+    "description": "Basic scalatra-application with /status endpoint.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "summary": "Status",
+        "description": "Indicates whether the application is healthy",
+        "tags": [
+          "1. Status"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "swagger": "2.0"
+}

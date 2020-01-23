@@ -1,0 +1,85 @@
+{
+  "header": {
+    "deelVersion": "2.0.0",
+    "correlationID": "a60ea7eb-4557-4d4a-8455-51bfbc43de6b",
+    "sourceMessageID": "81541c9a-4b86-4f67-b4d1-51afd9c91c1c",
+    "eventTimestamp": "2019-08-05T08:17:17.986Z",
+    "messageType": "STATUS",
+    "primaryEntityID": "urn:bbc:optimo:asset:cmw3vglz2j4o"
+  },
+  "messageContext": {
+    "domain": "bbc.content.production",
+    "function": "contentProduction",
+    "statement": "Saved"
+  },
+  "data": {
+    "payload": {
+      "eventId": "81541c9a-4b86-4f67-b4d1-51afd9c91c1c",
+      "eventType": "SAVED",
+      "eventTimestamp": "2019-08-05T08:17:17.986Z",
+      "entityId": "urn:bbc:optimo:asset:cmw3vglz2j4o",
+      "userId": "core.engineering@bbc.co.uk",
+      "eventData": {
+        "assetId": "cmw3vglz2j4o",
+        "blockId": "e9d26f6c-0af0-4196-b4ae-61b1777e2a1e",
+        "branch": "working",
+        "type": "article",
+        "publishStatus": "draft",
+        "created": "2019-08-05T08:17:05Z",
+        "updated": "2019-08-05T08:17:17Z",
+        "userId": "core.engineering@bbc.co.uk",
+        "passport": {
+          "home": "http:\/\/www.bbc.co.uk\/ontologies\/passport\/home\/News",
+          "tags": [
+
+          ],
+          "language": "en-gb"
+        },
+        "publishingSettings": {
+          "home": "http:\/\/www.bbc.co.uk\/ontologies\/passport\/home\/News",
+          "language": "en-gb",
+          "taggings": [
+
+          ]
+        },
+        "meta": {
+          "seoHeadline": "",
+          "language": "en-gb",
+          "home": "http:\/\/www.bbc.co.uk\/ontologies\/passport\/home\/News"
+        },
+        "publishError": false,
+        "blocks": [
+          {
+            "blockId": "2526c8f3-54c8-4b9f-96db-a0d73fc0901d",
+            "type": "headline",
+            "blocks": [
+              {
+                "blockId": "3f8cb757-1147-415e-9410-2c2e6e5cd7e2",
+                "type": "text",
+                "blocks": [
+                  {
+                    "type": "paragraph",
+                    "model": {
+                      "text": "",
+                      "blocks": [
+                        {
+                          "type": "fragment",
+                          "model": {
+                            "text": "",
+                            "attributes": [
+
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
