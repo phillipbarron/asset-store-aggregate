@@ -31,6 +31,11 @@ trait AssetStoreApi extends BaseApi {
    Ok()
   }
 
+  get("/:assetId/branch/:branch") {
+    // add a get to the service & Dao
+    Ok()
+  }
+
   error {
     case e: AssetNotFoundException =>
       log.info(e.getMessage, e)

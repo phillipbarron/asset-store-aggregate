@@ -1,6 +1,6 @@
 {
   "info": {
-    "title": "Asset store aggregatei",
+    "title": "Asset store aggregate",
     "description": "Asset store aggregate swagger documentation",
     "version": "1.0.0"
   },
@@ -26,24 +26,17 @@
         }
       }
     },
-    "/state/{assetId}/{eventId}": {
+    "/assets/{id}": {
       "get": {
         "summary": "State",
-        "description": "Provide the asset id and event id to retrieve the snapshot",
+        "description": "Provide a short Optimo ID to retrieve the asset.",
         "tags": [
           "2. State"
         ],
         "parameters": [
           {
-            "name": "assetId",
-            "description": "The asset id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "eventId",
-            "description": "The event id associated with the asset",
+            "name": "id",
+            "description": "an asset short id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -65,33 +58,26 @@
         }
       }
     },
-    "/history/{assetId}": {
+    "/assets/{id}/branch/{:branch}": {
       "get": {
-        "summary": "History of events grouped by version",
-        "description": "Provide the asset id to retrieve the list of events for that asset",
+        "summary": "Provide a short Optimo ID and the branch to retrieve the asset.",
+        "description": "Provide a short Optimo ID and the branch to retrieve the asset.",
         "tags": [
-          "3. History"
+          "3. Branch"
         ],
         "parameters": [
           {
-            "name": "assetId",
+            "name": "id",
             "description": "The asset id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "page",
-            "description": "The page of results to retrieve",
+            "name": "branch",
+            "description": "the asset branch (ie working)",
             "in": "query",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "size",
-            "description": "The size of the page of results to retrieve",
-            "in": "query",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
