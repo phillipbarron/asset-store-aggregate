@@ -17,6 +17,7 @@ Todo:
 * Add ``GET /assets/{id}`` endpoint (What branch should that default to?)
 * Add ``GET /assets/{id}/branch/{branch} `` endpoint
 * Add mechanism to trash DB a re-consume queue from scratch
+* Add index to db ```db.assets.createIndex( { "assetId": 1 }, { unique: true } )```
 
 
 ### Whitelisting
