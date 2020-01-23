@@ -1,7 +1,7 @@
-package bbc.cps.optimohistoryapi.util
+package bbc.cps.assetstoreaggregate.util
 
-import bbc.cps.optimohistoryapi.model.EventType
-import bbc.cps.optimohistoryapi.model.EventType.EventType
+import bbc.cps.assetstoreaggregate.model.EventType
+import bbc.cps.assetstoreaggregate.model.EventType.EventType
 import com.github.tminglei.slickpg.{ExPostgresProfile, PgArraySupport, PgJson4sSupport, PgJsonSupport}
 import org.json4s.JValue
 import slick.ast.BaseTypedType

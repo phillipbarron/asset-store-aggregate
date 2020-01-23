@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi.util
+package bbc.cps.assetstoreaggregate.util
 
 import com.amazonaws.services.sns.AbstractAmazonSNS
 import com.amazonaws.services.sns.model._

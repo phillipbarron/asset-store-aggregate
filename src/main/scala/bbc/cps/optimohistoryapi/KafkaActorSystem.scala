@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi
+package bbc.cps.assetstoreaggregate
 
 import akka.actor.ActorSystem
 import akka.stream.{ActorMaterializer, ActorMaterializerSettings, Supervision}

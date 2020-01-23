@@ -1,9 +1,9 @@
-package bbc.cps.optimohistoryapi.services
+package bbc.cps.assetstoreaggregate.services
 
-import bbc.cps.optimohistoryapi.Config
-import bbc.cps.optimohistoryapi.model.Notification
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor._
-import bbc.cps.optimohistoryapi.util.JsonFormats
+import bbc.cps.assetstoreaggregate.Config
+import bbc.cps.assetstoreaggregate.model.Notification
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
+import bbc.cps.assetstoreaggregate.util.JsonFormats
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishResult
 import org.json4s.native.Serialization._

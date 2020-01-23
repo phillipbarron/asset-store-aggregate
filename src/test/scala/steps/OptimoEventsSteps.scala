@@ -4,9 +4,9 @@ import java.time.Instant
 import java.util.UUID
 
 import bbc.cps.camscalatrachassis.steps.ApiStepsChassis
-import bbc.cps.optimohistoryapi.Config
-import bbc.cps.optimohistoryapi.model.{Event, EventType}
-import bbc.cps.optimohistoryapi.util.{AmazonS3ClientDummy, AmazonSNSClientDummy}
+import bbc.cps.assetstoreaggregate.Config
+import bbc.cps.assetstoreaggregate.model.{Event, EventType}
+import bbc.cps.assetstoreaggregate.util.{AmazonS3ClientDummy, AmazonSNSClientDummy}
 import org.json4s.JsonAST.{JObject, JString}
 import org.json4s.native.Serialization.write
 import org.json4s.{DefaultFormats, Formats}

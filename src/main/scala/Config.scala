@@ -1,10 +1,10 @@
-package bbc.cps.optimohistoryapi
+package bbc.cps.assetstoreaggregate
 
 import akka.kafka.ConsumerSettings
 import bbc.camscalatrachassis.config.ConfigChassis
 import bbc.camscalatrachassis.config.ConfigChassis._
-import bbc.cps.optimohistoryapi.KafkaActorSystem.system
-import bbc.cps.optimohistoryapi.util.{AmazonS3ClientDummy, AmazonSNSClientDummy}
+import bbc.cps.assetstoreaggregate.KafkaActorSystem.system
+import bbc.cps.assetstoreaggregate.util.{AmazonS3ClientDummy, AmazonSNSClientDummy}
 import bbc.cps.whitelist.{Whitelist, WhitelistFactory}
 import com.amazonaws.ClientConfiguration
 import com.amazonaws.auth.InstanceProfileCredentialsProvider

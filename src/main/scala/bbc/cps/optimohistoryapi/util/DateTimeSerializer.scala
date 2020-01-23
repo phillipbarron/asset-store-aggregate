@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi.util
+package bbc.cps.assetstoreaggregate.util
 
 import org.joda.time.DateTime
 import org.joda.time.chrono.ISOChronology

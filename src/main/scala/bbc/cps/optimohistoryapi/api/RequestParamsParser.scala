@@ -1,6 +1,6 @@
-package bbc.cps.optimohistoryapi.api
+package bbc.cps.assetstoreaggregate.api
 
-import bbc.cps.optimohistoryapi.exceptions.BadRequestException
+import bbc.cps.assetstoreaggregate.exceptions.BadRequestException
 
 import scala.util.{Failure, Success, Try}
 

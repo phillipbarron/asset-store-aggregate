@@ -1,6 +1,6 @@
 package util
 
-import bbc.cps.optimohistoryapi.util.PaginationPageValues
+import bbc.cps.assetstoreaggregate.util.PaginationPageValues
 import org.scalatest.FlatSpec
 import org.scalatest.MustMatchers._
 

@@ -1,11 +1,11 @@
-package bbc.cps.optimohistoryapi.services
+package bbc.cps.assetstoreaggregate.services
 
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext
 import bbc.cps.monitoring.StatsD
-import bbc.cps.optimohistoryapi.Config
-import bbc.cps.optimohistoryapi.exceptions._
-import bbc.cps.optimohistoryapi.model.OptimoEvent
-import bbc.cps.optimohistoryapi.util.JsonFormats
+import bbc.cps.assetstoreaggregate.Config
+import bbc.cps.assetstoreaggregate.exceptions._
+import bbc.cps.assetstoreaggregate.model.OptimoEvent
+import bbc.cps.assetstoreaggregate.util.JsonFormats
 import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.PutObjectResult
 import com.amazonaws.{AmazonServiceException, SdkClientException}

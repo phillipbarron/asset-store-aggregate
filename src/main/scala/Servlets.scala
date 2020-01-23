@@ -1,6 +1,6 @@
-package bbc.cps.optimohistoryapi
+package bbc.cps.assetstoreaggregate
 
-import bbc.cps.optimohistoryapi.api._
+import bbc.cps.assetstoreaggregate.api._
 
 object Servlets {
   def apply(): Map[BaseApi, String] = {

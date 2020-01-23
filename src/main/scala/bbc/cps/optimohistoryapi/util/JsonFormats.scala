@@ -1,6 +1,6 @@
-package bbc.cps.optimohistoryapi.util
+package bbc.cps.assetstoreaggregate.util
 
-import bbc.cps.optimohistoryapi.model.EventType
+import bbc.cps.assetstoreaggregate.model.EventType
 import org.json4s.{DefaultFormats, Formats}
 import org.json4s.ext.{EnumNameSerializer, UUIDSerializer}
 

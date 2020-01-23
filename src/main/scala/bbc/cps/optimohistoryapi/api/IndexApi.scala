@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi.api
+package bbc.cps.assetstoreaggregate.api
 
 class IndexApi extends BaseApi {
 

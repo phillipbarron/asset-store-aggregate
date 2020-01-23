@@ -1,12 +1,12 @@
-package bbc.cps.optimohistoryapi.dao
+package bbc.cps.assetstoreaggregate.dao
 
 import java.time.Instant
 
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
-import bbc.cps.optimohistoryapi.Config
-import bbc.cps.optimohistoryapi.Config.Postgres
-import bbc.cps.optimohistoryapi.model.{Event, EventsTable}
-import bbc.cps.optimohistoryapi.util.SlickTypeExtensionProfile.api._
+import bbc.cps.assetstoreaggregate.Config
+import bbc.cps.assetstoreaggregate.Config.Postgres
+import bbc.cps.assetstoreaggregate.model.{Event, EventsTable}
+import bbc.cps.assetstoreaggregate.util.SlickTypeExtensionProfile.api._
 import slick.lifted.TableQuery
 
 import scala.concurrent.Future

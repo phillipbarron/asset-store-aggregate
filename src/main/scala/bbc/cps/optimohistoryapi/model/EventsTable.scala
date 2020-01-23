@@ -1,10 +1,10 @@
-package bbc.cps.optimohistoryapi.model
+package bbc.cps.assetstoreaggregate.model
 
 import java.time.Instant
 import java.util.UUID
 
-import bbc.cps.optimohistoryapi.model.EventType.EventType
-import bbc.cps.optimohistoryapi.util.SlickTypeExtensionProfile.api._
+import bbc.cps.assetstoreaggregate.model.EventType.EventType
+import bbc.cps.assetstoreaggregate.util.SlickTypeExtensionProfile.api._
 import slick.sql.SqlProfile.ColumnOption.NotNull
 
 class EventsTable(tag: Tag) extends Table[Event](tag, "events") {

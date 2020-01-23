@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi.model
+package bbc.cps.assetstoreaggregate.model
 
 object EventType extends Enumeration {
   type EventType = Value

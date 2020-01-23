@@ -1,8 +1,8 @@
-package bbc.cps.optimohistoryapi.api
+package bbc.cps.assetstoreaggregate.api
 
 import bbc.camscalatrachassis.api.ApiChassis
-import bbc.cps.optimohistoryapi.Config
-import bbc.cps.optimohistoryapi.exceptions.BadRequestException
+import bbc.cps.assetstoreaggregate.Config
+import bbc.cps.assetstoreaggregate.exceptions.BadRequestException
 import org.json4s.JsonAST.{JObject, JString}
 import org.scalatra.{BadRequest, InternalServerError}
 import org.slf4j.LoggerFactory

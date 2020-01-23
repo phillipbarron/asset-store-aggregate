@@ -1,11 +1,11 @@
-package bbc.cps.optimohistoryapi.dao
+package bbc.cps.assetstoreaggregate.dao
 
 import akka.Done
 import akka.kafka.ConsumerMessage.{CommittableOffset, CommittableOffsetBatch}
 import akka.kafka.scaladsl.Consumer
 import akka.kafka.{ConsumerMessage, ConsumerSettings, Subscriptions}
 import akka.stream.scaladsl.{Sink, Source}
-import bbc.cps.optimohistoryapi.KafkaActorSystem._
+import bbc.cps.assetstoreaggregate.KafkaActorSystem._
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.Future

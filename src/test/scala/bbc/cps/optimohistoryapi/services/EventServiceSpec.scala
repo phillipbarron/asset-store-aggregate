@@ -1,12 +1,12 @@
-package bbc.cps.optimohistoryapi.services
+package bbc.cps.assetstoreaggregate.services
 
 import java.time.Instant
 import java.util.UUID
 
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext
-import bbc.cps.optimohistoryapi.dao.EventsDao
-import bbc.cps.optimohistoryapi.model.EventType.EventType
-import bbc.cps.optimohistoryapi.model._
+import bbc.cps.assetstoreaggregate.dao.EventsDao
+import bbc.cps.assetstoreaggregate.model.EventType.EventType
+import bbc.cps.assetstoreaggregate.model._
 import org.json4s.native.JsonMethods.parse
 import org.mockito.ArgumentMatchers._
 import org.mockito.Mockito.{reset, _}

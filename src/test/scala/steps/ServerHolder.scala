@@ -1,8 +1,8 @@
 package steps
 
 import bbc.cps.camscalatrachassis.steps.TestServer
-import bbc.cps.optimohistoryapi.Servlets
-import bbc.cps.optimohistoryapi.api.BaseApi
+import bbc.cps.assetstoreaggregate.Servlets
+import bbc.cps.assetstoreaggregate.api.BaseApi
 
 trait ServerHolder  {
   ServerHolder.started()

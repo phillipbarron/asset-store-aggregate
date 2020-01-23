@@ -1,10 +1,10 @@
-package bbc.cps.optimohistoryapi.api
+package bbc.cps.assetstoreaggregate.api
 
-import bbc.cps.optimohistoryapi.exceptions.HistoryNotFoundException
-import bbc.cps.optimohistoryapi.model.EventType
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor
-import bbc.cps.optimohistoryapi.services.HistoryService
-import bbc.cps.optimohistoryapi.util.{DateTimeSerializer, InstantSerializer}
+import bbc.cps.assetstoreaggregate.exceptions.HistoryNotFoundException
+import bbc.cps.assetstoreaggregate.model.EventType
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor
+import bbc.cps.assetstoreaggregate.services.HistoryService
+import bbc.cps.assetstoreaggregate.util.{DateTimeSerializer, InstantSerializer}
 import org.json4s.ext.{EnumNameSerializer, UUIDSerializer}
 import org.json4s.{DefaultFormats, Formats}
 import org.scalatra.{AsyncResult, NotFound}

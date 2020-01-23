@@ -9,8 +9,8 @@ import org.apache.kafka.common.TopicPartition
 import org.apache.kafka.common.serialization.{StringDeserializer, StringSerializer}
 
 import scala.collection.JavaConverters._
-import bbc.cps.optimohistoryapi.Config.MessagingClient.kafkaTopic
-import bbc.cps.optimohistoryapi.dao.OptimoKafkaConsumer
+import bbc.cps.assetstoreaggregate.Config.MessagingClient.kafkaTopic
+import bbc.cps.assetstoreaggregate.dao.OptimoKafkaConsumer
 
 object KafkaUtil {
   private val kafkaHost = "localhost"

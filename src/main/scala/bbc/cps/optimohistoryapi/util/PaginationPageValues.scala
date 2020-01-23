@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi.util
+package bbc.cps.assetstoreaggregate.util
 
 trait PaginationPageValues {
 

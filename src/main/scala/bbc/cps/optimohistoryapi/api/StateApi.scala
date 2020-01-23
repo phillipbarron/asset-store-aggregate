@@ -1,7 +1,7 @@
-package bbc.cps.optimohistoryapi.api
+package bbc.cps.assetstoreaggregate.api
 
-import bbc.cps.optimohistoryapi.exceptions.{SnapshotNotFoundException, SnapshotRetrievalFailureException}
-import bbc.cps.optimohistoryapi.services.SnapshotService
+import bbc.cps.assetstoreaggregate.exceptions.{SnapshotNotFoundException, SnapshotRetrievalFailureException}
+import bbc.cps.assetstoreaggregate.services.SnapshotService
 import org.json4s.JsonAST.{JObject, JString}
 import org.scalatra._
 import org.slf4j.LoggerFactory
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory
 trait StateApi extends BaseApi {
 
   private val log = LoggerFactory getLogger getClass
-  
+
   val snapshotService: SnapshotService
 
   before() {

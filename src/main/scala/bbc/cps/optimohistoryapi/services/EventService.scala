@@ -1,9 +1,9 @@
-package bbc.cps.optimohistoryapi.services
+package bbc.cps.assetstoreaggregate.services
 
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
-import bbc.cps.optimohistoryapi.dao.EventsDao
-import bbc.cps.optimohistoryapi.model._
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor._
+import bbc.cps.assetstoreaggregate.dao.EventsDao
+import bbc.cps.assetstoreaggregate.model._
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
 
 import scala.concurrent.Future
 

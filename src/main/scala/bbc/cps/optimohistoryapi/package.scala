@@ -1,4 +1,4 @@
-package bbc.cps.optimohistoryapi
+package bbc.cps.assetstoreaggregate
 
 package object exceptions {
   case class BadRequestException(message: String) extends Exception(message)

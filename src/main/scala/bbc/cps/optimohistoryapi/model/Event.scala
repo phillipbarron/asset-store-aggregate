@@ -1,8 +1,8 @@
-package bbc.cps.optimohistoryapi.model
+package bbc.cps.assetstoreaggregate.model
 
 import java.time.Instant
 import java.util.UUID
-import bbc.cps.optimohistoryapi.model.EventType.EventType
+import bbc.cps.assetstoreaggregate.model.EventType.EventType
 
 case class Event(eventType: EventType,
                  userId: String,

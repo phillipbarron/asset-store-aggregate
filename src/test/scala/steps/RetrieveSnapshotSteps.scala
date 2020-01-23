@@ -2,10 +2,10 @@ package steps
 
 import bbc.camscalatratestchassis.ChassisMockServer
 import bbc.cps.camscalatrachassis.steps.ApiStepsChassis
-import bbc.cps.optimohistoryapi.Config
+import bbc.cps.assetstoreaggregate.Config
 import org.json4s.native.JsonMethods._
 import org.scalatest.MustMatchers._
-import bbc.cps.optimohistoryapi.util.AmazonS3ClientDummy
+import bbc.cps.assetstoreaggregate.util.AmazonS3ClientDummy
 import dispatch.url
 import org.json4s.DefaultFormats
 import util.AppTestUtil
@@ -17,13 +17,13 @@ class RetrieveSnapshotSteps extends ApiStepsChassis with AppTestUtil {
   Before { _ =>
     ChassisMockServer.mockServer.reset()
   }
-  
+
   Given("""^A snapshot exists for assetId (.*) and eventId (.*)$"""){ (assetId: String, eventId: String) =>
     val fileKey: String = s"${Config.environment}/$assetId/$eventId.json"
     AmazonS3ClientDummy.putObject("myBucket", fileKey, snapshotContentString)
     assert(AmazonS3ClientDummy.getObjectAsString("myBucket", fileKey).equals(snapshotContentString))
   }
-  
+
   When("""^I retrieve an existing snapshot with assetId (.*) and eventId (.*)$"""){ (assetId: String, eventId: String) =>
     get(url(s"$host/state/$assetId/$eventId"))
   }

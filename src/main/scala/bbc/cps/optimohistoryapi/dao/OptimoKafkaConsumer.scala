@@ -1,15 +1,15 @@
-package bbc.cps.optimohistoryapi.dao
+package bbc.cps.assetstoreaggregate.dao
 
 import akka.kafka.ConsumerMessage.CommittableOffset
 import akka.kafka.scaladsl.Consumer
 import akka.kafka.{ConsumerMessage, ConsumerSettings}
 import akka.stream.scaladsl.Source
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
-import bbc.cps.optimohistoryapi.Config.MessagingClient.{kafkaTopic, consumerSettings => kafkaConsumerSettings}
-import bbc.cps.optimohistoryapi.model.OptimoEvent
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor._
-import bbc.cps.optimohistoryapi.services.OptimoEventService
-import bbc.cps.optimohistoryapi.util.JsonFormats
+import bbc.cps.assetstoreaggregate.Config.MessagingClient.{kafkaTopic, consumerSettings => kafkaConsumerSettings}
+import bbc.cps.assetstoreaggregate.model.OptimoEvent
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
+import bbc.cps.assetstoreaggregate.services.OptimoEventService
+import bbc.cps.assetstoreaggregate.util.JsonFormats
 import org.json4s.native.Serialization.read
 import org.slf4j.LoggerFactory
 

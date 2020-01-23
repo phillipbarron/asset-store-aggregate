@@ -2,10 +2,10 @@ package util
 
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
 import bbc.camscalatratestchassis.{PortFinder, TestUtil}
-import bbc.cps.optimohistoryapi.Config
-import bbc.cps.optimohistoryapi.Config.Postgres
-import bbc.cps.optimohistoryapi.model.{Event, EventsTable}
-import bbc.cps.optimohistoryapi.util.SlickTypeExtensionProfile.api._
+import bbc.cps.assetstoreaggregate.Config
+import bbc.cps.assetstoreaggregate.Config.Postgres
+import bbc.cps.assetstoreaggregate.model.{Event, EventsTable}
+import bbc.cps.assetstoreaggregate.util.SlickTypeExtensionProfile.api._
 import slick.dbio.{Effect, NoStream}
 import slick.lifted.TableQuery
 import slick.sql.SqlAction

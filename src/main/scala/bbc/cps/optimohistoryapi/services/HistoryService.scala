@@ -1,13 +1,13 @@
-package bbc.cps.optimohistoryapi.services
+package bbc.cps.assetstoreaggregate.services
 
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
-import bbc.cps.optimohistoryapi.api.RequestParams
-import bbc.cps.optimohistoryapi.dao.EventsDao
-import bbc.cps.optimohistoryapi.exceptions.{DatabaseException, HistoryNotFoundException}
-import bbc.cps.optimohistoryapi.model._
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor._
-import bbc.cps.optimohistoryapi.util.PaginationPageValues
+import bbc.cps.assetstoreaggregate.api.RequestParams
+import bbc.cps.assetstoreaggregate.dao.EventsDao
+import bbc.cps.assetstoreaggregate.exceptions.{DatabaseException, HistoryNotFoundException}
+import bbc.cps.assetstoreaggregate.model._
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
+import bbc.cps.assetstoreaggregate.util.PaginationPageValues
 import org.joda.time.{DateTime, DateTimeZone}
 import org.slf4j.LoggerFactory
 

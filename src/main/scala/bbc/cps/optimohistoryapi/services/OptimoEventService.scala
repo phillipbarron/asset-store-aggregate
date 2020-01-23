@@ -1,7 +1,7 @@
-package bbc.cps.optimohistoryapi.services
+package bbc.cps.assetstoreaggregate.services
 
-import bbc.cps.optimohistoryapi.monitoring.HistoryApiMonitor._
-import bbc.cps.optimohistoryapi.model.OptimoEvent
+import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
+import bbc.cps.assetstoreaggregate.model.OptimoEvent
 import org.slf4j.LoggerFactory
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
 import scala.concurrent.Future

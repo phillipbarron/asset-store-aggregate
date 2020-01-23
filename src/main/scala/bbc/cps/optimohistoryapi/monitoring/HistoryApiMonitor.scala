@@ -1,7 +1,7 @@
-package bbc.cps.optimohistoryapi.monitoring
+package bbc.cps.assetstoreaggregate.monitoring
 
 import bbc.camscalatrachassis.monitoring.MonitorChassis
-import bbc.cps.optimohistoryapi.Config
+import bbc.cps.assetstoreaggregate.Config
 
 object HistoryApiMonitor extends MonitorChassis {
   val applicationName = Config.applicationName
