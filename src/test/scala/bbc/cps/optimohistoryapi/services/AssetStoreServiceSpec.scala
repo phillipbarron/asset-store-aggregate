@@ -21,7 +21,7 @@ import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
 
 
-class AssetStoreApiSpec extends FlatSpec with AppTestUtil with MockitoSugar with BeforeAndAfter {
+class AssetStoreServiceSpec extends FlatSpec with AppTestUtil with MockitoSugar with BeforeAndAfter {
   private val mockEventsDao = mock[EventsDao]
 
   private val assetId = "cq915kk4wy5o"
@@ -30,7 +30,7 @@ class AssetStoreApiSpec extends FlatSpec with AppTestUtil with MockitoSugar with
     reset(mockEventsDao)
   }
 
-  object TestHistoryService extends AssetStoreApi {
+  object TestHistoryService extends AssetStoreService {
     protected val eventsDao: EventsDao = mockEventsDao
   }
 

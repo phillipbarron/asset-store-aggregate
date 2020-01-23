@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory
 
 import scala.concurrent.Future
 
-trait AssetStoreApi {
+trait AssetStoreService {
   private val log = LoggerFactory getLogger getClass
   protected val eventsDao: EventsDao
   implicit def dateTimeOrdering: Ordering[DateTime] = Ordering.fromLessThan(_ isAfter _)
@@ -65,7 +65,7 @@ trait AssetStoreApi {
     }
 }
 
-object AssetStoreApi extends AssetStoreApi {
+object AssetStoreService extends AssetStoreService {
   protected val eventsDao: EventsDao = EventsDao
 }
 

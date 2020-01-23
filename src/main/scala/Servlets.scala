@@ -7,7 +7,7 @@ object Servlets {
     Map(
       IndexApi -> "/*",
       StateApi -> "/state/*",
-      HistoryApi -> "/history/*",
+      AssetStoreApi -> "/history/*",
       SwaggerUi -> "/docs"
     )
   }

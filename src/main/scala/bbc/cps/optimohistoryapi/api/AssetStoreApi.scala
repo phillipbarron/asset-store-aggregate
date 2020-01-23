@@ -3,7 +3,7 @@ package bbc.cps.assetstoreaggregate.api
 import bbc.cps.assetstoreaggregate.exceptions.HistoryNotFoundException
 import bbc.cps.assetstoreaggregate.model.EventType
 import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor
-import bbc.cps.assetstoreaggregate.services.AssetStoreApi
+import bbc.cps.assetstoreaggregate.services.AssetStoreService
 import bbc.cps.assetstoreaggregate.util.{DateTimeSerializer, InstantSerializer}
 import org.json4s.ext.{EnumNameSerializer, UUIDSerializer}
 import org.json4s.{DefaultFormats, Formats}
@@ -22,7 +22,7 @@ trait AssetStoreApi extends BaseApi {
   private def param(name: String) =
     params.get(name)
 
-  val historyService: AssetStoreApi
+  val assetStoreService: AssetStoreService
 
   before() {
     contentType = formats("json")
@@ -34,7 +34,7 @@ trait AssetStoreApi extends BaseApi {
         log.info(s"Retrieving events for asset ${parsedParams.assetId}")
         new AsyncResult {
           val is = HistoryApiMonitor.timeAsync("route.history") {
-            historyService.getHistory(parsedParams)
+            assetStoreService.getHistory(parsedParams)
           }
         }
       case Failure(e) => throw e
@@ -48,6 +48,6 @@ trait AssetStoreApi extends BaseApi {
   }
 }
 
-object HistoryApi extends HistoryApi {
-  override val historyService: AssetStoreApi = AssetStoreApi
+object AssetStoreApi extends AssetStoreApi {
+  override val assetStoreService: AssetStoreService = AssetStoreService
 }
