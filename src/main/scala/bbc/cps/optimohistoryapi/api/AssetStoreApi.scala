@@ -3,7 +3,7 @@ package bbc.cps.assetstoreaggregate.api
 import bbc.cps.assetstoreaggregate.exceptions.HistoryNotFoundException
 import bbc.cps.assetstoreaggregate.model.EventType
 import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor
-import bbc.cps.assetstoreaggregate.services.HistoryService
+import bbc.cps.assetstoreaggregate.services.AssetStoreApi
 import bbc.cps.assetstoreaggregate.util.{DateTimeSerializer, InstantSerializer}
 import org.json4s.ext.{EnumNameSerializer, UUIDSerializer}
 import org.json4s.{DefaultFormats, Formats}
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory
 import scala.util.{Failure, Success}
 
 
-trait HistoryApi extends BaseApi {
+trait AssetStoreApi extends BaseApi {
   private val log = LoggerFactory getLogger getClass
 
   override protected implicit val jsonFormats: Formats =
@@ -22,7 +22,7 @@ trait HistoryApi extends BaseApi {
   private def param(name: String) =
     params.get(name)
 
-  val historyService: HistoryService
+  val historyService: AssetStoreApi
 
   before() {
     contentType = formats("json")
@@ -49,5 +49,5 @@ trait HistoryApi extends BaseApi {
 }
 
 object HistoryApi extends HistoryApi {
-  override val historyService: HistoryService = HistoryService
+  override val historyService: AssetStoreApi = AssetStoreApi
 }

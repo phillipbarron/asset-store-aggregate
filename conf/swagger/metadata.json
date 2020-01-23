@@ -1,6 +1,6 @@
 {
   "info": {
-    "title": "Optimo History Api",
+    "title": "Asset store aggregate",
     "description": "Basic scalatra-application with /status endpoint.",
     "version": "1.0.0"
   },
