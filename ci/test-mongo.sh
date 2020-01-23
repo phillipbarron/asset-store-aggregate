@@ -5,7 +5,7 @@ set -e
 UNIQUE_SUFFIX="test-asset-store-aggregate"
 
 # These must be tags that exist in the docker library
-POSTGRES_VERSION=9.6
+MONGO_VERSION=4.2.2-bionic
 
 function retryPort() {
     local port=$1
@@ -30,17 +30,17 @@ function retryPort() {
 
 while [ "$1" != "" ]; do
     case $1 in
-        --start-postgres )
-            docker run -d --name "postgres-${UNIQUE_SUFFIX}" -d -p 5432:5432 postgres:${POSTGRES_VERSION}
+        --start-mongo )
+            docker run -d --name "mongo-${UNIQUE_SUFFIX}" -d -p 27017:27017 mongo:${MONGO_VERSION}
             ;;
-        --wait-postgres )
-            retryPort 5432
+        --wait-mongo )
+            retryPort 27017
             ;;
-        --logs-postgres )
-            docker logs "postgres-${UNIQUE_SUFFIX}"
+        --logs-mongo )
+            docker logs "mongo-${UNIQUE_SUFFIX}"
             ;;
         --stop-and-remove )
-            docker rm -f "postgres-${UNIQUE_SUFFIX}"
+            docker rm -f "mongo-${UNIQUE_SUFFIX}"
             ;;
         * )
         echo "Unexpected $1"

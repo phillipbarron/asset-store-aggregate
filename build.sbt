@@ -28,7 +28,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
   "com.typesafe.akka" %% "akka-stream-kafka" % "1.0.4",
   "com.zaxxer" % "HikariCP" % "3.3.1",
-  "org.postgresql" % "postgresql" % "42.2.6",
   "com.github.tminglei" %% "slick-pg" % "0.15.7",
   "com.github.tminglei" %% "slick-pg_json4s" % "0.15.7",
   "org.mongodb.scala" %% "mongo-scala-driver" % "2.8.0",

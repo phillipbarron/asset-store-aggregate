@@ -4,17 +4,17 @@ set -eu
 SCRIPTS_PATH=$(dirname $0)
 KAFKA_PORT=9999
 
-trap "echo 'Deleting containers:' && $SCRIPTS_PATH/test-postgres.sh --stop-and-remove && $SCRIPTS_PATH/test-kafka.sh --stop-and-remove" EXIT
+trap "echo 'Deleting containers:' && $SCRIPTS_PATH/test-mongo.sh --stop-and-remove && $SCRIPTS_PATH/test-kafka.sh --stop-and-remove" EXIT
 
 echo "Starting containers."
-$SCRIPTS_PATH/test-postgres.sh --start-postgres
+$SCRIPTS_PATH/test-mongo.sh --start-mongo
 KAFKA_PORT=${KAFKA_PORT} $SCRIPTS_PATH/test-kafka.sh --start-kafka
 
 echo "Waiting for kafka..."
 KAFKA_PORT=${KAFKA_PORT} $SCRIPTS_PATH/test-kafka.sh --wait-kafka
 
-echo "Waiting for postgres..."
-$SCRIPTS_PATH/test-postgres.sh --wait-postgres
+echo "Waiting for mongo..."
+$SCRIPTS_PATH/test-mongo.sh --wait-mongo
 
 # Run Cucumber Tests
 if [ $# -gt 0 ]; then
