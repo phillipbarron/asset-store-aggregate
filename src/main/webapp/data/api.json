@@ -1,7 +1,7 @@
 {
   "info": {
-    "title": "Optimo History Api",
-    "description": "Optimo History Api swagger documentation",
+    "title": "Asset store aggregatei",
+    "description": "Asset store aggregate swagger documentation",
     "version": "1.0.0"
   },
   "paths": {
