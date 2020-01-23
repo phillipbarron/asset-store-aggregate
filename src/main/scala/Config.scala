@@ -4,6 +4,7 @@ import akka.kafka.ConsumerSettings
 import bbc.camscalatrachassis.config.ConfigChassis
 import bbc.camscalatrachassis.config.ConfigChassis._
 import bbc.cps.assetstoreaggregate.KafkaActorSystem.system
+import bbc.cps.assetstoreaggregate.dao.MongoClientFactory
 import bbc.cps.assetstoreaggregate.util.AmazonSNSClientDummy
 import com.amazonaws.ClientConfiguration
 import com.amazonaws.auth.InstanceProfileCredentialsProvider
@@ -11,7 +12,9 @@ import com.amazonaws.regions.Regions
 import com.amazonaws.services.sns.{AmazonSNS, AmazonSNSClientBuilder}
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
+import org.mongodb.scala.{MongoCollection, Document}
 import org.slf4j.LoggerFactory
+
 
 object Config {
   val applicationName: String = "asset-store-aggregate"
@@ -32,6 +35,26 @@ object Config {
       case Some(value) => value
       case None => throw new MissingConfigurationException(s"Could not find config for key [$key]")
     }
+  }
+
+  object Mongo {
+    private val cosmosConfigUri = getSecureConfigValue("mongodb_connection_uri").getOrElse("")
+
+    private val mongoConnectionUri = environment match {
+      case INT | TEST | LIVE => cosmosConfigUri
+      case _ => "mongodb://localhost"
+    }
+
+    private val mongoClient = MongoClientFactory.getClient(mongoConnectionUri)
+
+    private val assetsDatabaseName = "assets-db"
+
+    private val assetsDatabase = mongoClient.getDatabase(assetsDatabaseName)
+
+    val assetCollection: MongoCollection[Document] = assetsDatabase.getCollection("assets")
+
+    log.info(s">>> Mongo connection URI: $mongoConnectionUri")
+    log.info(s">>> Mongo database: $assetsDatabaseName")
   }
 
   object SNS {
