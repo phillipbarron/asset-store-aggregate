@@ -18,7 +18,7 @@ $SCRIPTS_PATH/test-postgres.sh --wait-postgres
 sleep 5
 
 echo "Creating events table in postgres."
-psql -h localhost -p 5432 -U postgres -f ./infrastructure/database/001-create-events-table.sql
+#psql -h localhost -p 5432 -U postgres -f ./infrastructure/database/001-create-events-table.sql
 
 echo "Starting app on port 8080"
 sbt run

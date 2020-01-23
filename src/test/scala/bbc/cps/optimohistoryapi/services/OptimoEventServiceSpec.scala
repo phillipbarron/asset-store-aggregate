@@ -55,7 +55,7 @@ class OptimoEventServiceSpec extends FlatSpec with AppTestUtil with MockitoSugar
   }
 
   object TestOptimoEventService extends OptimoEventService {
-    override protected val eventService: EventService = mockEventService
+    override protected val assetStoreService: EventService = mockEventService
     override protected val snapshotService: SnapshotService = mockSnapshotService
     override protected val notificationService: NotificationService = mockNotificationService
   }

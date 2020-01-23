@@ -4,19 +4,14 @@ import akka.kafka.ConsumerSettings
 import bbc.camscalatrachassis.config.ConfigChassis
 import bbc.camscalatrachassis.config.ConfigChassis._
 import bbc.cps.assetstoreaggregate.KafkaActorSystem.system
-import bbc.cps.assetstoreaggregate.util.{AmazonS3ClientDummy, AmazonSNSClientDummy}
-import bbc.cps.whitelist.{Whitelist, WhitelistFactory}
+import bbc.cps.assetstoreaggregate.util.AmazonSNSClientDummy
 import com.amazonaws.ClientConfiguration
 import com.amazonaws.auth.InstanceProfileCredentialsProvider
 import com.amazonaws.regions.Regions
-import com.amazonaws.services.s3.{AmazonS3, AmazonS3ClientBuilder}
 import com.amazonaws.services.sns.{AmazonSNS, AmazonSNSClientBuilder}
-import com.zaxxer.hikari.{HikariConfig, HikariDataSource}
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.slf4j.LoggerFactory
-import slick.jdbc.PostgresProfile
-import slick.jdbc.PostgresProfile.api._
 
 object Config {
   val applicationName: String = "asset-store-aggregate"
@@ -39,20 +34,6 @@ object Config {
     }
   }
 
-  object S3Client {
-    val historyS3Client: AmazonS3 = environment match {
-      case DEV if System.getProperty("useRealS3Client", "false").equalsIgnoreCase("true") =>
-        log.info(s">>> Using real S3 client on $environment")
-        AmazonS3ClientBuilder.standard().build()
-      case DEV | MGMT =>
-        log.info(s">>> Using dummy S3 Client")
-        AmazonS3ClientDummy
-      case _ =>
-        log.info(s">>> Using real S3 client on $environment")
-        AmazonS3ClientBuilder.standard().build()
-    }
-  }
-
   object SNS {
     val historyNotificationsTopic: String = environment match {
       case DEV | MGMT => "historyNotificationsTopic"
@@ -69,52 +50,6 @@ object Config {
           .withCredentials(InstanceProfileCredentialsProvider.getInstance())
           .withRegion(Regions.EU_WEST_1)
           .build()
-    }
-  }
-
-  object Postgres {
-    log.info("Creating PostgreSql client object.")
-
-    private val defaultPostgresMaxConnections = "10"
-
-    // FORMAT: "jdbc:postgresql://host:port/database|username|password"
-    private val postgresConnectionUri = environment match {
-      case DEV | MGMT => "jdbc:postgresql://localhost:5432/postgres|postgres|postgres"
-      case _ => getSecureConfigurationAsString("postgres_connection_uri")
-    }
-
-    private val postgresMaxConnections = environment match {
-      case DEV | MGMT => defaultPostgresMaxConnections.toInt
-      case _ => getConfigValue("postgres_maxConnections").getOrElse(defaultPostgresMaxConnections).toInt
-    }
-
-    private val connectionUrlRegex = """^(.*)\|(.*)\|(.*)$""".r
-
-    private val (url, username, password) = postgresConnectionUri match {
-      case connectionUrlRegex(a, b, c) => (a, b, c)
-      case _ => throw new MissingConfigurationException(s"Invalid postgres connection url: $postgresConnectionUri")
-    }
-
-    log.info(s">>> PostgreSql url: $url")
-    log.info(s">>> PostgreSql username: $username")
-
-    private val hikariConfig = new HikariConfig()
-    hikariConfig.setDriverClassName("org.postgresql.Driver")
-    hikariConfig.setJdbcUrl(url)
-    hikariConfig.setUsername(username)
-    hikariConfig.setPassword(password)
-    hikariConfig.setMaximumPoolSize(postgresMaxConnections)
-    hikariConfig.setMinimumIdle(5)
-    hikariConfig.setIdleTimeout(60000)
-    hikariConfig.setAutoCommit(true)
-
-    private val hikariDataSource = new HikariDataSource(hikariConfig)
-
-    val db: PostgresProfile.backend.DatabaseDef = Database.forDataSource(hikariDataSource, None)
-
-    def closeDbConnection() {
-      log.info("Closing Postgres connection pool")
-      hikariDataSource.close()
     }
   }
 
@@ -146,11 +81,6 @@ object Config {
     }
   }
 
-  val snapshotBucket: String = environment match {
-    case LIVE => "cps-article-history-live"
-    case _ => "cps-article-history"
-  }
-  log.info(s">>> Using Snapshot bucket name: $snapshotBucket")
 }
 
 class MissingConfigurationException(message: String) extends Exception(message)

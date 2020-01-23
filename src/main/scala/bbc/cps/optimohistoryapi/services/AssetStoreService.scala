@@ -1,6 +1,6 @@
 package bbc.cps.assetstoreaggregate.services
 
-import bbc.cps.assetstoreaggregate.dao.{DocumentStoreDao, EventsDao}
+import bbc.cps.assetstoreaggregate.dao.{DocumentStoreDao}
 import bbc.cps.assetstoreaggregate.model._
 import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor.monitor
 import org.slf4j.LoggerFactory
@@ -22,6 +22,7 @@ trait AssetStoreService {
 
   def saveEvent(optimoEvent: OptimoEvent): Future[Unit] = monitor("save-document", "saveDocument") {
     val document = optimoEventToAssetDocument(optimoEvent)
+    println("WE ARE SAVING THE EVENT!!!!", document)
     documentStoreDao.upsertAsset(document)
   }
 }

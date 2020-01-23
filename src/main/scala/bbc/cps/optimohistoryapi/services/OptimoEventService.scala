@@ -7,7 +7,7 @@ import scala.concurrent.Future
 
 
 trait OptimoEventService {
-  protected val eventService: EventService
+  protected val assetStoreService: AssetStoreService
   protected val notificationService: NotificationService
   private val log = LoggerFactory getLogger getClass
 
@@ -18,11 +18,11 @@ trait OptimoEventService {
 
 
   def processEvent(optimoEvent: OptimoEvent): Future[Unit] = {
-    eventService.saveEvent(optimoEvent)
+    assetStoreService.saveEvent(optimoEvent)
   }
 }
 
 object OptimoEventService extends OptimoEventService {
-  protected val eventService: EventService = EventService
+  protected val assetStoreService: AssetStoreService = AssetStoreService
   protected val notificationService : NotificationService = NotificationService
 }
