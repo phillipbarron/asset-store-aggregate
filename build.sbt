@@ -31,6 +31,7 @@ libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "42.2.6",
   "com.github.tminglei" %% "slick-pg" % "0.15.7",
   "com.github.tminglei" %% "slick-pg_json4s" % "0.15.7",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "2.8.0",
 
   // test
   "bbc.shared" %% "cam-scalatra-test-chassis" % "2.0.1" % "test",
