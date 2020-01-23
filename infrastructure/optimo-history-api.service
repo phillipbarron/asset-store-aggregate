@@ -1,18 +1,18 @@
 [Unit]
-Description=optimo-history-api
+Description=asset-store-aggregate
 After=network.target nss-lookup.target
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=10
-WorkingDirectory=/usr/lib/optimo-history-api
-ExecStart=/bin/bash -c "java -jar /usr/lib/optimo-history-api/target/scala-2.11/optimo-history-api.jar"
+WorkingDirectory=/usr/lib/asset-store-aggregate
+ExecStart=/bin/bash -c "java -jar /usr/lib/asset-store-aggregate/target/scala-2.11/asset-store-aggregate.jar"
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=optimo-history-api
-User=optimo-history-api
-Group=optimo-history-api
+SyslogIdentifier=asset-store-aggregate
+User=asset-store-aggregate
+Group=asset-store-aggregate
 
 [Install]
 WantedBy=multi-user.target

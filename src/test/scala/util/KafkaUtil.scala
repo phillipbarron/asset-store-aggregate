@@ -22,7 +22,7 @@ object KafkaUtil {
 
   private val consumerProperties = new Properties()
   consumerProperties.put("bootstrap.servers", s"$kafkaHost:$kafkaPort")
-  consumerProperties.put("group.id", "test-optimo-history-api-consumer")
+  consumerProperties.put("group.id", "test-asset-store-aggregate-consumer")
   consumerProperties.put("enable.auto.commit", "true")
   consumerProperties.put("auto.commit.interval.ms", "1000")
 

@@ -2,7 +2,7 @@
 
 set -e
 
-UNIQUE_SUFFIX="test-optimo-history-api"
+UNIQUE_SUFFIX="test-asset-store-aggregate"
 KAFKA_NAME="kafka-${UNIQUE_SUFFIX}"
 ZOOKEEPER_NAME="zookeeper-${UNIQUE_SUFFIX}"
 

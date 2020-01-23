@@ -4,7 +4,7 @@
 		module="asset-store-aggregare-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20200123091821"
+		publication="20200123092841"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

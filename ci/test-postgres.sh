@@ -2,7 +2,7 @@
 
 set -e
 
-UNIQUE_SUFFIX="test-optimo-history-api"
+UNIQUE_SUFFIX="test-asset-store-aggregate"
 
 # These must be tags that exist in the docker library
 POSTGRES_VERSION=9.6

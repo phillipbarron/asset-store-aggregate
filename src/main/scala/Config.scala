@@ -19,7 +19,7 @@ import slick.jdbc.PostgresProfile
 import slick.jdbc.PostgresProfile.api._
 
 object Config {
-  val applicationName: String = "optimo-history-api"
+  val applicationName: String = "asset-store-aggregate"
 
   val ConfigChassis(
   environment
@@ -132,7 +132,7 @@ object Config {
     }
 
     val kafkaConsumerGroupId: String = environment match {
-      case DEV | MGMT => "optimo-history-api"
+      case DEV | MGMT => "asset-store-aggregate"
       case _ => getConfigurationAsString("kafkaConsumerGroupId")
     }
 

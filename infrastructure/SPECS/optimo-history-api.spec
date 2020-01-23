@@ -1,11 +1,11 @@
-%define name optimo-history-api
+%define name asset-store-aggregate
 Name: %{name}
 Version: %{?buildnum}%{!?buildnum:0}
 Release: 1%{?dist}
 
 %define buildroot %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
-Summary: optimo-history-api
+Summary: oasset-store-aggregate
 
 Group: Installation Script
 License: internal BBC use only
@@ -28,26 +28,26 @@ AutoReqProv: no
 %build
 
 %pre
-getent group optimo-history-api >/dev/null || groupadd -r optimo-history-api
-getent passwd optimo-history-api >/dev/null || useradd -r -g optimo-history-api -G optimo-history-api -d / -s /sbin/nologin -c "optimo-history-api" optimo-history-api
+getent group asset-store-aggregate >/dev/null || groupadd -r asset-store-aggregate
+getent passwd asset-store-aggregate >/dev/null || useradd -r -g asset-store-aggregate -G asset-store-aggregate -d / -s /sbin/nologin -c "asset-store-aggregate" asset-store-aggregate
 
 %install
-mkdir -p %{buildroot}/usr/lib/optimo-history-api
-cp -r ./ %{buildroot}/usr/lib/optimo-history-api
-mkdir -p %{buildroot}/var/log/optimo-history-api
-mkdir -p %{buildroot}/etc/bake-scripts/optimo-history-api/
-mv %{buildroot}/usr/lib/optimo-history-api/bake-scripts/* %{buildroot}/etc/bake-scripts/optimo-history-api/.
-rm -fr %{buildroot}/usr/lib/optimo-history-api/bake-scripts
+mkdir -p %{buildroot}/usr/lib/asset-store-aggregate
+cp -r ./ %{buildroot}/usr/lib/asset-store-aggregate
+mkdir -p %{buildroot}/var/log/asset-store-aggregate
+mkdir -p %{buildroot}/etc/bake-scripts/asset-store-aggregate/
+mv %{buildroot}/usr/lib/asset-store-aggregate/bake-scripts/* %{buildroot}/etc/bake-scripts/asset-store-aggregate/.
+rm -fr %{buildroot}/usr/lib/asset-store-aggregate/bake-scripts
 
 %post
-systemctl enable /usr/lib/optimo-history-api/optimo-history-api.service
+systemctl enable /usr/lib/asset-store-aggregate/asset-store-aggregate.service
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(644, optimo-history-api, optimo-history-api, 755)
-/usr/lib/optimo-history-api
-/var/log/optimo-history-api
-%attr(755, root, root) /etc/bake-scripts/optimo-history-api/*
-%attr(755, optimo-history-api, optimo-history-api) /usr/lib/optimo-history-api/target/scala-2.11/optimo-history-api.jar
+%defattr(644, asset-store-aggregate, asset-store-aggregate, 755)
+/usr/lib/asset-store-aggregate
+/var/log/asset-store-aggregate
+%attr(755, root, root) /etc/bake-scripts/asset-store-aggregate/*
+%attr(755, asset-store-aggregate, asset-store-aggregate) /usr/lib/asset-store-aggregate/target/scala-2.11/asset-store-aggregate.jar
