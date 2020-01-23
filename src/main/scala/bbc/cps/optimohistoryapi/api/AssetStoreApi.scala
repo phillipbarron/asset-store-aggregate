@@ -26,13 +26,11 @@ trait AssetStoreApi extends BaseApi {
     contentType = formats("json")
   }
 
-  get("/:assetId") {
-    // add a get to the service & Dao
+  get("/:id") {
    Ok()
   }
 
-  get("/:assetId/branch/:branch") {
-    // add a get to the service & Dao
+  get("/:id/branch/:branch") {
     Ok()
   }
 

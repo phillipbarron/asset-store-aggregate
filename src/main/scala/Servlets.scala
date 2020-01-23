@@ -6,7 +6,7 @@ object Servlets {
   def apply(): Map[BaseApi, String] = {
     Map(
       IndexApi -> "/*",
-      AssetStoreApi -> "/history/*",
+      AssetStoreApi -> "/assets/*",
       SwaggerUi -> "/docs"
     )
   }
