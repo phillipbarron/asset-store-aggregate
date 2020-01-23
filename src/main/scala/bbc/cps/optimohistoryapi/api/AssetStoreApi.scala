@@ -1,16 +1,14 @@
 package bbc.cps.assetstoreaggregate.api
 
-import bbc.cps.assetstoreaggregate.exceptions.HistoryNotFoundException
+import bbc.cps.assetstoreaggregate.exceptions.AssetNotFoundException
 import bbc.cps.assetstoreaggregate.model.EventType
-import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor
 import bbc.cps.assetstoreaggregate.services.AssetStoreService
 import bbc.cps.assetstoreaggregate.util.{DateTimeSerializer, InstantSerializer}
 import org.json4s.ext.{EnumNameSerializer, UUIDSerializer}
 import org.json4s.{DefaultFormats, Formats}
-import org.scalatra.{AsyncResult, NotFound}
+import org.scalatra.{Ok, NotFound}
 import org.slf4j.LoggerFactory
 
-import scala.util.{Failure, Success}
 
 
 trait AssetStoreApi extends BaseApi {
@@ -29,20 +27,12 @@ trait AssetStoreApi extends BaseApi {
   }
 
   get("/:assetId") {
-    RequestParamsParser(param("assetId"), param("page"), param("size")) match {
-      case Success(parsedParams) =>
-        log.info(s"Retrieving events for asset ${parsedParams.assetId}")
-        new AsyncResult {
-          val is = HistoryApiMonitor.timeAsync("route.history") {
-            assetStoreService.getHistory(parsedParams)
-          }
-        }
-      case Failure(e) => throw e
-    }
+    // add a get to the service & Dao
+   Ok()
   }
 
   error {
-    case e: HistoryNotFoundException =>
+    case e: AssetNotFoundException =>
       log.info(e.getMessage, e)
       halt(NotFound(buildErrorResponse(e.getMessage)))
   }
