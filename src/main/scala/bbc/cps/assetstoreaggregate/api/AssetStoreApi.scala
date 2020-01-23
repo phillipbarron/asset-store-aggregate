@@ -9,16 +9,11 @@ import org.json4s.{DefaultFormats, Formats}
 import org.scalatra.{Ok, NotFound}
 import org.slf4j.LoggerFactory
 
-
-
 trait AssetStoreApi extends BaseApi {
   private val log = LoggerFactory getLogger getClass
 
   override protected implicit val jsonFormats: Formats =
     DefaultFormats + new EnumNameSerializer(EventType) + UUIDSerializer + InstantSerializer + DateTimeSerializer
-
-  private def param(name: String) =
-    params.get(name)
 
   val assetStoreService: AssetStoreService
 
@@ -27,6 +22,7 @@ trait AssetStoreApi extends BaseApi {
   }
 
   get("/:id") {
+    assetStoreService.getAsset(params("id"))
    Ok()
   }
 
