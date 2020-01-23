@@ -18,7 +18,7 @@ ${SCRIPTS_PATH}/test-mongo.sh --wait-mongo
 sleep 5
 
 echo "Creating assets table in mongo."
-#
+
 #mongo --eval "db use test-assets-db"
 #mongo --eval "db.createCollection('_assets')"
 
