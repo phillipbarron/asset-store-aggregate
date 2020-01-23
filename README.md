@@ -9,14 +9,14 @@ To run application:
 
 Todo:
 
-* Create case class for both working and published branches
-* Consume massage from a Kafka Topic
-* Add a Mongo Dao with CRUD API
-* Add a mongo docker container for testing / local dev
-* Integrate docker mongo with startup script
+* Create case class for both working and published branches **&#9745;**
+* Consume messages from a Kafka Topic **&#9745;**
+* Add a Mongo DAO with CRUD API
+* Add a Mongo Docker container for testing / local dev
+* Integrate Docker/Mongo with startup script
 * Add ``GET /assets/{id}`` endpoint (What branch should that default to?)
 * Add ``GET /assets/{id}/branch/{branch} `` endpoint
-
+* Add mechanism to trash DB a re-consume queue from scratch
 
 
 ### Whitelisting
