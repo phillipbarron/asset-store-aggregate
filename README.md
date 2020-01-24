@@ -21,6 +21,7 @@ Todo:
 * Add Model for Optimo asset (Can we not care and just return an JValue?)
 * Fix all the tests I broke
 * Stop using default port in Docker containers to avoid conflict with services running on host
+* Review DAO / Service / API logic distribution / Consume pattern - this made sense for the History API but might not be appropriate for this project
 
 
 ### Whitelisting
