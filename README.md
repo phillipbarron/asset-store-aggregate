@@ -18,6 +18,8 @@ Todo:
 * Add ``GET /assets/{id}/branch/{branch} `` endpoint
 * Add mechanism to trash DB a re-consume queue from scratch
 * Add index to db ```db.assets.createIndex( { "assetId": 1 }, { unique: true } )```
+* Add Model for Optimo asset (Can we not care and just return an JValue?)
+* Fix all the tests I broke
 
 
 ### Whitelisting
