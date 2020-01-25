@@ -6,7 +6,7 @@ import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor.monitor
 import bbc.cps.assetstoreaggregate.util.JsonFormats
 import org.json4s.JsonAST.JValue
 import org.mongodb.scala.bson.collection.immutable.Document
-import org.mongodb.scala.model.Filters._
+import org.mongodb.scala.model.Filters.equal
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.Future
@@ -31,8 +31,21 @@ trait AssetStoreService extends JsonFormats {
   }
 
   def getAsset(assetId: String): Future[JValue] = {
-    documentStoreDao.find(eq("assetId", assetId))
+    val filter = equal("assetId", assetId);
+    documentStoreDao.find(filter)
   }
+
+  def getPassportsByLocators(locators: Seq[String]): Future[Seq[Passport]] = {
+    log.info(s"Retrieving passports by locators: $locators")
+
+    val filter = in("locator", locators: _*)
+    passportDao.find(filter) map {
+      _ map { document =>
+        read[Passport](document.toJson())
+      }
+    }
+  }
+
 }
 
 object AssetStoreService extends AssetStoreService {
