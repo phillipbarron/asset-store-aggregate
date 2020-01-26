@@ -35,13 +35,13 @@ trait AssetStoreService extends JsonFormats {
     documentStoreDao.create(Document(write(document)))
   }
 
-  def getAsset(assetId: String): Future[JValue] = {
+  def getAsset(assetId: String): JValue = {
     val filter = equal("assetId", assetId);
-    val document = documentStoreDao.find(filter)
-    document.onComplete {
+    documentStoreDao.find(filter).onComplete {
       case Success(value) => read[AssetDocument](value.head.toJson()).publishedBranch
       case Failure(exception) => exception
     }
+
   }
 
 //  def getPassportsByLocators(locators: Seq[String]): Future[Seq[Passport]] = {
