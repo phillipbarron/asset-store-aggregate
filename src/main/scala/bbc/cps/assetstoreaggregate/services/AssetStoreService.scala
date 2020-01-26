@@ -4,11 +4,13 @@ import bbc.cps.assetstoreaggregate.dao.DocumentStoreDao
 import bbc.cps.assetstoreaggregate.model._
 import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor.monitor
 import bbc.cps.assetstoreaggregate.util.JsonFormats
-import org.json4s.JsonAST.JValue
+import javax.swing.JList
+import org.json4s.JsonAST.{JInt, JObject, JValue}
 import org.mongodb.scala.bson.collection.immutable.Document
-import org.mongodb.scala.model.Filters.equal
+import org.mongodb.scala.model.Filters.{equal, in}
 import org.slf4j.LoggerFactory
 import org.json4s.jackson.Serialization.{read, write}
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import org.json4s.jackson.Serialization.write
@@ -35,27 +37,17 @@ trait AssetStoreService extends JsonFormats {
     documentStoreDao.create(Document(write(document)))
   }
 
-  def getAsset(assetId: String): JValue = {
-    val filter = equal("assetId", assetId);
-    documentStoreDao.find(filter).onComplete {
-      case Success(value) => read[AssetDocument](value.head.toJson()).publishedBranch
-      case Failure(exception) => exception
+  def getAsset(assetId: String): Future[Seq[AssetDocument]] = {
+    val filter = equal("assetId", assetId)
+    documentStoreDao.find(filter) map {
+      _ map { document =>
+        read[AssetDocument](document.toJson())
+      }
     }
-
   }
-
-//  def getPassportsByLocators(locators: Seq[String]): Future[Seq[Passport]] = {
-//    log.info(s"Retrieving passports by locators: $locators")
-//
-//    val filter = in("locator", locators: _*)
-//    passportDao.find(filter) map {
-//      _ map { document =>
-//        read[Passport](document.toJson())
-//      }
-//    }
-//  }
-
 }
+
+
 
 object AssetStoreService extends AssetStoreService {
   protected val documentStoreDao: DocumentStoreDao = DocumentStoreDao

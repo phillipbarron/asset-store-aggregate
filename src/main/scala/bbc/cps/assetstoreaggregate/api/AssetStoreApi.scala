@@ -22,8 +22,7 @@ trait AssetStoreApi extends BaseApi {
   }
 
   get("/:id") {
-    assetStoreService.getAsset(params("id"))
-   Ok()
+   assetStoreService.getAsset(params("id"))
   }
 
   get("/:id/branch/:branch") {
