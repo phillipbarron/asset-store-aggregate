@@ -1,12 +1,12 @@
 package bbc.cps.assetstoreaggregate.api
 
 import bbc.cps.assetstoreaggregate.exceptions.AssetNotFoundException
-import bbc.cps.assetstoreaggregate.model.EventType
+import bbc.cps.assetstoreaggregate.model.{Branch, EventType}
 import bbc.cps.assetstoreaggregate.services.AssetStoreService
 import bbc.cps.assetstoreaggregate.util.{DateTimeSerializer, InstantSerializer}
 import org.json4s.ext.{EnumNameSerializer, UUIDSerializer}
 import org.json4s.{DefaultFormats, Formats}
-import org.scalatra.{Ok, NotFound}
+import org.scalatra.{NotFound, Ok}
 import org.slf4j.LoggerFactory
 
 trait AssetStoreApi extends BaseApi {
@@ -26,7 +26,7 @@ trait AssetStoreApi extends BaseApi {
   }
 
   get("/:id/branch/:branch") {
-    Ok()
+    assetStoreService.getAssetBranch(params("id"), ("branch"))
   }
 
   error {
