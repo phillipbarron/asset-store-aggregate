@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory
 import org.json4s.jackson.Serialization.{read, write}
 import bbc.cps.assetstoreaggregate.exceptions.BadRequestException
 import bbc.cps.assetstoreaggregate.model.EventType._
-
+import bbc.cps.assetstoreaggregate.exceptions.AssetNotFoundException
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
@@ -69,7 +69,7 @@ trait AssetStoreService extends JsonFormats {
     val filter = equal("assetId", assetId)
     documentStoreDao.find(filter) map {
       case Seq(document) => read[AssetDocument](document.toJson()).workingBranch
-      case Nil => throw BadRequestException("this is a bad thing")
+      case Nil => throw AssetNotFoundException("PANIC!")
     }
   }
 
@@ -83,7 +83,7 @@ trait AssetStoreService extends JsonFormats {
           case _ => assetDocument.workingBranch
         }
       }
-      case Nil => throw BadRequestException("this is a bad thing")
+      case Nil => throw AssetNotFoundException("PANIC!")
     }
   }
 }
