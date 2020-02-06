@@ -9,7 +9,6 @@ import org.mongodb.scala.bson.collection.immutable.Document
 import org.mongodb.scala.model.Filters.equal
 import org.slf4j.LoggerFactory
 import org.json4s.jackson.Serialization.{read, write}
-import bbc.cps.assetstoreaggregate.exceptions.BadRequestException
 import bbc.cps.assetstoreaggregate.model.EventType._
 import bbc.cps.assetstoreaggregate.exceptions.AssetNotFoundException
 import scala.concurrent.ExecutionContext.Implicits.global
