@@ -14,7 +14,7 @@ Todo:
 * Add a Mongo DAO with CRUD API
 * Add a Mongo Docker container for testing / local dev **&#9745;** 
 * Integrate Docker/Mongo with startup script **&#9745;**
-* Add ``GET /assets/{id}`` endpoint (What branch should that default to?)
+* Add ``GET /assets/{id}`` endpoint - this should return the working branch **in progress**
 * Add ``GET /assets/{id}/branch/{branch} `` endpoint
 * Add mechanism to trash DB a re-consume queue from scratch
 * Add index to db ```db.assets.createIndex( { "assetId": 1 }, { unique: true } )```
@@ -24,8 +24,8 @@ Todo:
 * Review DAO / Service / API logic distribution / Consume pattern - this made sense for the History API but might not be appropriate for this project
 
 
+
 ### Whitelisting
 
 This service is whitelisted and is hosted in https://github.com/bbc/cam-whitelisting.
-
 The whitelist is disabled on int, Jenkins and locally.

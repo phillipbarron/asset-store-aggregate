@@ -77,5 +77,5 @@ resolvers ++= Seq(
   "BBC Forge Maven Releases" at "https://dev.bbc.co.uk/maven2/releases/",
   "BBC Forge Maven Snapshots" at "https://dev.bbc.co.uk/maven2/snapshots",
   "BBC Forge Artifactory" at "https://dev.bbc.co.uk/artifactory/repo",
-  "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
+  "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/"
 )
