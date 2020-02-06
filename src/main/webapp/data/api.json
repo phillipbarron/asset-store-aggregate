@@ -58,7 +58,7 @@
         }
       }
     },
-    "/assets/{id}/branch/{:branch}": {
+    "/assets/{id}/branch/{branch}": {
       "get": {
         "summary": "Provide a short Optimo ID and the branch to retrieve the asset.",
         "description": "Provide a short Optimo ID and the branch to retrieve the asset.",
@@ -76,9 +76,9 @@
           {
             "name": "branch",
             "description": "the asset branch (ie working)",
-            "in": "query",
+            "in": "path",
             "required": true,
-            "type": "integer"
+            "type": "string"
           }
         ],
         "responses": {

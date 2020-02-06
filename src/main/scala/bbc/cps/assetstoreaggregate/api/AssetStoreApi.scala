@@ -26,7 +26,9 @@ trait AssetStoreApi extends BaseApi {
   }
 
   get("/:id/branch/:branch") {
-    assetStoreService.getAssetBranch(params("id"), ("branch"))
+    val requestedBranch = params("branch");
+    val requestedId = params("id");
+    assetStoreService.getAssetBranch(requestedId, requestedBranch)
   }
 
   error {

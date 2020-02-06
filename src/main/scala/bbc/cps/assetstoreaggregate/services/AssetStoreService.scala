@@ -5,17 +5,18 @@ import bbc.cps.assetstoreaggregate.model._
 import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor.monitor
 import bbc.cps.assetstoreaggregate.util.JsonFormats
 import org.json4s.JsonAST.{JString, JValue}
+import bbc.cps.assetstoreaggregate.model.Branch.{Published, Working}
 import org.mongodb.scala.bson.collection.immutable.Document
 import org.mongodb.scala.model.Filters.equal
-import org.slf4j.LoggerFactory
 import org.json4s.jackson.Serialization.{read, write}
 import bbc.cps.assetstoreaggregate.model.EventType._
 import bbc.cps.assetstoreaggregate.exceptions.AssetNotFoundException
+import bbc.cps.assetstoreaggregate.model.Branch.Branch
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 trait AssetStoreService extends JsonFormats {
-  private val log = LoggerFactory getLogger getClass
   protected val documentStoreDao: DocumentStoreDao
 
   private def optimoEventToAssetDocument(optimoEvent: OptimoEvent): Future[AssetDocument] = {
@@ -27,14 +28,14 @@ trait AssetStoreService extends JsonFormats {
           case SAVED | CREATED | DELETED | RESTORED =>
             AssetDocument(
               optimoEvent.data.payload.assetId,
-              optimoEvent.data.payload.eventData,
+              setBranch(optimoEvent.data.payload.eventData, Working),
               existingDoc.publishedBranch
             )
           case _ =>
             AssetDocument(
               optimoEvent.data.payload.assetId,
-              optimoEvent.data.payload.eventData,
-              optimoEvent.data.payload.eventData
+              setBranch(optimoEvent.data.payload.eventData, Working),
+              setBranch(optimoEvent.data.payload.eventData, Published)
             )
         }
       }
@@ -42,18 +43,30 @@ trait AssetStoreService extends JsonFormats {
         case SAVED | CREATED | DELETED | RESTORED =>
           AssetDocument(
             optimoEvent.data.payload.assetId,
-            optimoEvent.data.payload.eventData,
+            setBranch(optimoEvent.data.payload.eventData, Working),
             JString("""{}""")
           )
         case _ =>
+          println("there is no existing document and so we are returning a new one with both branches")
           AssetDocument(
             optimoEvent.data.payload.assetId,
-            optimoEvent.data.payload.eventData,
-            optimoEvent.data.payload.eventData
+            setBranch(optimoEvent.data.payload.eventData, Working),
+            setBranch(optimoEvent.data.payload.eventData, Published)
           )
       }
     }
+  }
 
+  private def setBranch(asset: JValue, branch: Branch): JValue = {
+    val bb = branch match {
+      case Published => "published"
+      case _ => "working"
+    }
+    val transformed = asset transformField {
+      case ("branch", JString(_)) => ("branch", JString(bb))
+    }
+    println(s"we received the value $asset with the branch $branch and returning $transformed")
+    transformed
   }
 
   def saveEvent(optimoEvent: OptimoEvent): Future[Unit] = monitor("save-document", "saveDocument") {
@@ -86,7 +99,6 @@ trait AssetStoreService extends JsonFormats {
     }
   }
 }
-
 
 object AssetStoreService extends AssetStoreService {
   protected val documentStoreDao: DocumentStoreDao = DocumentStoreDao

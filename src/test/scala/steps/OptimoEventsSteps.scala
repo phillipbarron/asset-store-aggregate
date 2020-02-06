@@ -51,9 +51,9 @@ class OptimoEventsSteps extends ApiStepsChassis with AppTestUtil {
     producerSend(fixtureAsString("news-update-published-message.json"))
   }
 
-  When("""^a published event exists for an article$""") { () =>
-    Await.result(saveEvent(publishedEvent), 5.seconds)
-  }
+//  When("""^a published event exists for an article$""") { () =>
+//    Await.result(saveEvent(publishedEvent), 5.seconds)
+//  }
 
   When("""^an article saved message is received$""") { () =>
     producerSend(fixtureAsString("created-message.json"))
@@ -80,17 +80,7 @@ class OptimoEventsSteps extends ApiStepsChassis with AppTestUtil {
     producerSend(fixtureAsString("published-message.json"))
   }
 
-  Then("""^a created event is added to the article's history$""") { () =>
-    retryAssertions { _ =>
-      getArticleEvents(assetId)  mustBe List(createdEvent)
-    }
-  }
 
-  Then("""^a published event is added to the article's history$""") { () =>
-    retryAssertions { _ =>
-      getArticleEvents(assetId)  mustBe List(publishedEvent)
-    }
-  }
 
   Then("""^a saved event is added to the article's history$""") { () =>
     val expectedSavedEvent = Event(
@@ -102,10 +92,6 @@ class OptimoEventsSteps extends ApiStepsChassis with AppTestUtil {
       0,
       0
     )
-
-    retryAssertions { _ =>
-      getArticleEvents(assetId)  mustBe List(createdEvent, expectedSavedEvent)
-    }
   }
 
   Then("""^a published minor change event is added to the article's history$""") { () =>
@@ -119,9 +105,6 @@ class OptimoEventsSteps extends ApiStepsChassis with AppTestUtil {
       1
     )
 
-    retryAssertions { _ =>
-      getArticleEvents(assetId)  mustBe List(publishedEvent, expectedMinorChangeEvent)
-    }
   }
 
   Then("""^a news update published event is added to the article's history$""") { () =>
@@ -135,17 +118,6 @@ class OptimoEventsSteps extends ApiStepsChassis with AppTestUtil {
       0
     )
 
-    retryAssertions { _ =>
-      getArticleEvents(assetId)  mustBe List(publishedEvent, expectedNewsUpdateChangeEvent)
-    }
-  }
-
-  Then("""^a snapshot is saved""") { () =>
-    retryAssertions { _ =>
-      val fileKey = s"${Config.environment}/$assetId/$createdEventId.json"
-      val snapshotContentString = write(fixtureAsJson("created-message.json") \ "data" \ "payload" \ "eventData")
-      assert(AmazonS3ClientDummy.getObjectAsString(Config.snapshotBucket, fileKey).equals(snapshotContentString))
-    }
   }
 
   Then("""^a history updated notification is sent$"""){ () =>
