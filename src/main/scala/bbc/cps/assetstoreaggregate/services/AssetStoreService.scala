@@ -35,7 +35,7 @@ trait AssetStoreService extends JsonFormats {
             AssetDocument(
               optimoEvent.data.payload.assetId,
               setBranch(optimoEvent.data.payload.eventData, Working),
-              setBranch(optimoEvent.data.payload.eventData, Published)
+              Some(setBranch(optimoEvent.data.payload.eventData, Published))
             )
         }
       }
@@ -44,13 +44,13 @@ trait AssetStoreService extends JsonFormats {
           AssetDocument(
             optimoEvent.data.payload.assetId,
             setBranch(optimoEvent.data.payload.eventData, Working),
-            JString("""{}""")
+            None
           )
         case _ =>
           AssetDocument(
             optimoEvent.data.payload.assetId,
             setBranch(optimoEvent.data.payload.eventData, Working),
-            setBranch(optimoEvent.data.payload.eventData, Published)
+            Some(setBranch(optimoEvent.data.payload.eventData, Published))
           )
       }
     }
@@ -88,11 +88,14 @@ trait AssetStoreService extends JsonFormats {
       case Seq(document) => {
         val assetDocument = read[AssetDocument](document.toJson())
         branch match {
-          case "published" => assetDocument.publishedBranch
+          case "published" => assetDocument.publishedBranch match {
+            case Some(doc) => doc
+            case None => throw AssetNotFoundException(s"asset with id $assetId not found")
+          }
           case _ => assetDocument.workingBranch
         }
       }
-      case Nil => throw AssetNotFoundException("PANIC!")
+      case Nil => throw AssetNotFoundException(s"asset with id $assetId not found")
     }
   }
 }

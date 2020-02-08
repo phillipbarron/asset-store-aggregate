@@ -15,13 +15,14 @@ Todo:
 * Add a Mongo Docker container for testing / local dev **&#9745;** 
 * Integrate Docker/Mongo with startup script **&#9745;**
 * Add ``GET /assets/{id}`` endpoint - this should return the working branch **&#9745;**
-* Add ``GET /assets/{id}/branch/{branch} `` endpoint **in progress**
+* Add ``GET /assets/{id}/branch/{branch} `` endpoint **&#9745;**
 * Add mechanism to trash DB a re-consume queue from scratch
 * Add index to db ```db.assets.createIndex( { "assetId": 1 }, { unique: true } )``` - do this programmatically
 * Fix all the tests I broke
 * Stop using default port in Docker containers to avoid conflict with services running on host
 * Review DAO / Service / API logic distribution / Consume pattern - this made sense for the History API but might not be appropriate for this project
-* update the branch string appropriately (or remove it?)
+* update the branch string appropriately **&#9745;**
+* Make the published branch an Option 
 
 
 
