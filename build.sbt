@@ -24,12 +24,8 @@ libraryDependencies ++= Seq(
   // core
   "bbc.shared" %% "cam-scalatra-chassis" % "2.0.1",
   "com.amazonaws" % "aws-java-sdk-s3" % "1.11.580",
-  "com.typesafe.slick" %% "slick" % slickVersion,
-  "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
   "com.typesafe.akka" %% "akka-stream-kafka" % "1.0.4",
   "com.zaxxer" % "HikariCP" % "3.3.1",
-  "com.github.tminglei" %% "slick-pg" % "0.15.7",
-  "com.github.tminglei" %% "slick-pg_json4s" % "0.15.7",
   "org.mongodb.scala" %% "mongo-scala-driver" % "2.8.0",
 
   // test

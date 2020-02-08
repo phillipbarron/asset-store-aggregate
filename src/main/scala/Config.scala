@@ -1,5 +1,7 @@
 package bbc.cps.assetstoreaggregate
 
+import java.util.concurrent.TimeUnit
+
 import akka.kafka.ConsumerSettings
 import bbc.camscalatrachassis.config.ConfigChassis
 import bbc.camscalatrachassis.config.ConfigChassis._
@@ -10,9 +12,10 @@ import com.amazonaws.ClientConfiguration
 import com.amazonaws.auth.InstanceProfileCredentialsProvider
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.sns.{AmazonSNS, AmazonSNSClientBuilder}
+import com.mongodb.WriteConcern
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
-import org.mongodb.scala.{MongoCollection, Document}
+import org.mongodb.scala.{Document, MongoCollection}
 import org.slf4j.LoggerFactory
 
 
@@ -52,6 +55,7 @@ object Config {
     private val assetsDatabase = mongoClient.getDatabase(assetsDatabaseName)
 
     val assetCollection: MongoCollection[Document] = assetsDatabase.getCollection("assets")
+      .withWriteConcern(WriteConcern.W1.withWTimeout(5, TimeUnit.SECONDS))
 
     log.info(s">>> Mongo connection URI: $mongoConnectionUri")
     log.info(s">>> Mongo database: $assetsDatabaseName")

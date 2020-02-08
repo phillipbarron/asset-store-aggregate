@@ -7,7 +7,6 @@ import akka.kafka.{ConsumerMessage, ConsumerSettings, Subscriptions}
 import akka.stream.scaladsl.{Sink, Source}
 import bbc.cps.assetstoreaggregate.KafkaActorSystem._
 import org.slf4j.LoggerFactory
-
 import scala.concurrent.Future
 
 trait AkkaKafkaConsumer {
