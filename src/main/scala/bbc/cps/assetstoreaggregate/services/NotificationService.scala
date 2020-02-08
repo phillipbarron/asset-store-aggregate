@@ -2,7 +2,6 @@ package bbc.cps.assetstoreaggregate.services
 
 import bbc.cps.assetstoreaggregate.Config
 import bbc.cps.assetstoreaggregate.model.Notification
-import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
 import bbc.cps.assetstoreaggregate.util.JsonFormats
 import com.amazonaws.services.sns.AmazonSNS
 import com.amazonaws.services.sns.model.PublishResult
@@ -23,7 +22,6 @@ trait NotificationService extends JsonFormats {
         result
       case result@Failure(e) =>
         log.error(s"Failed to send history change notification for asset [$assetId] with error: [${e.getMessage}]")
-        incrementMetric("errors-sns-notify-failure", "errors.sns.notify.failure")
         result
     }
   }

@@ -25,7 +25,6 @@ libraryDependencies ++= Seq(
   "bbc.shared" %% "cam-scalatra-chassis" % "2.0.1",
   "com.amazonaws" % "aws-java-sdk-s3" % "1.11.580",
   "com.typesafe.akka" %% "akka-stream-kafka" % "1.0.4",
-  "com.zaxxer" % "HikariCP" % "3.3.1",
   "org.mongodb.scala" %% "mongo-scala-driver" % "2.8.0",
 
   // test

@@ -2,7 +2,6 @@ package bbc.cps.assetstoreaggregate.services
 
 import bbc.cps.assetstoreaggregate.dao.DocumentStoreDao
 import bbc.cps.assetstoreaggregate.model._
-import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor.monitor
 import bbc.cps.assetstoreaggregate.util.JsonFormats
 import org.json4s.JsonAST.{JString, JValue}
 import bbc.cps.assetstoreaggregate.model.Branch.{Published, Working}
@@ -11,8 +10,6 @@ import org.json4s.jackson.Serialization.read
 import bbc.cps.assetstoreaggregate.model.EventType._
 import bbc.cps.assetstoreaggregate.exceptions.AssetNotFoundException
 import bbc.cps.assetstoreaggregate.model.Branch.Branch
-
-
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
@@ -66,12 +63,10 @@ trait AssetStoreService extends JsonFormats {
     }
   }
 
-  def saveEvent(optimoEvent: OptimoEvent): Future[Unit] = monitor("save-document", "saveDocument") {
-    optimoEventToAssetDocument(optimoEvent) map {
+  def saveEvent(optimoEvent: OptimoEvent): Future[Unit] = optimoEventToAssetDocument(optimoEvent) map {
       document =>
         println("Saving event", document)
         documentStoreDao.upsertAsset(document)
-    }
   }
 
   def getAsset(assetId: String): Future[JValue] = {

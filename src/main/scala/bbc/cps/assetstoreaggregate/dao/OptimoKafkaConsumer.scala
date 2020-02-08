@@ -7,7 +7,6 @@ import akka.stream.scaladsl.Source
 import bbc.camscalatrachassis.concurrent.CustomExecutionContext._
 import bbc.cps.assetstoreaggregate.Config.MessagingClient.{kafkaTopic, consumerSettings => kafkaConsumerSettings}
 import bbc.cps.assetstoreaggregate.model.OptimoEvent
-import bbc.cps.assetstoreaggregate.monitoring.HistoryApiMonitor._
 import bbc.cps.assetstoreaggregate.services.OptimoEventService
 import bbc.cps.assetstoreaggregate.util.JsonFormats
 import org.json4s.native.Serialization.read
@@ -30,7 +29,6 @@ trait OptimoKafkaConsumer extends AkkaKafkaConsumer with JsonFormats {
       case Success(result) => result
       case Failure(e) =>
         log.error(s"Error consuming event ${message.record.value}", e)
-        incrementMetric("errors-consuming-event", "errors.consumingEvent")
         throw new Exception(s">>> ConsumerService ERROR!! $e")
     }
   }
@@ -38,15 +36,12 @@ trait OptimoKafkaConsumer extends AkkaKafkaConsumer with JsonFormats {
   private def logOutput: PartialFunction[(CommittableOffset, OptimoEvent), (CommittableOffset, OptimoEvent)] = {
     case (offset, optimoEvent) =>
       log.info(s"consuming domain event: $optimoEvent")
-      incrementMetric("event-consumed", "event.consumed")
       offset -> optimoEvent
   }
 
   private def process(streamProcessor: OptimoEvent => Future[Unit]): PartialFunction[(CommittableOffset, OptimoEvent), Future[CommittableOffset]] = {
-      case (offset, assetEvent) =>
-      monitor("process-stream", "processStream") {
-        streamProcessor(assetEvent) map { _ => offset }
-      }
+    case (offset, assetEvent) =>
+      streamProcessor(assetEvent) map { _ => offset }
   }
 
   protected def consumeStream(): Source[CommittableOffset, Consumer.Control] = {
