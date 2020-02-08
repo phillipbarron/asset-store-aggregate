@@ -22,7 +22,7 @@ Todo:
 * Stop using default port in Docker containers to avoid conflict with services running on host
 * Review DAO / Service / API logic distribution / Consume pattern - this made sense for the History API but might not be appropriate for this project
 * update the branch string appropriately **&#9745;**
-* Make the published branch an Option 
+* Make the published branch an Option **&#9745;**
 
 
 
