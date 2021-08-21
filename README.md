@@ -23,6 +23,7 @@ Todo:
 * Review DAO / Service / API logic distribution / Consume pattern - this made sense for the History API but might not be appropriate for this project
 * update the branch string appropriately **&#9745;**
 * Make the published branch an Option **&#9745;**
+* This is painfully slow - identify where bottlenecks are in event consumption
 
 
 
